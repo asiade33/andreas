@@ -1,0 +1,987 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Allgemeine Einstellungen */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* Abstand für den fixierten Header */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    1
+  ); /* Weißer Hintergrund mit voller Deckkraft */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für modernen Look */
+  position: fixed; /* Fixiert den Header beim Scrollen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out; /* Übergang für Hintergrundfarbe */
+}
+
+/* Hamburger-Menü */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: #333333;
+  z-index: 1100;
+}
+
+/* Navigation (standardmäßig verborgen auf mobilen Geräten) */
+.navigation {
+  display: flex;
+}
+
+/* Logo-Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Hover-Effekte für Logo und Name */
+#logo,
+#name {
+  cursor: pointer; /* Zeigt den Hand-Cursor an, um anzuzeigen, dass es klickbar ist */
+  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease; /* Sanfte Übergänge für die Effekte */
+}
+
+/* Hover-Effekt für das Logo */
+#logo:hover {
+  transform: scale(1.1); /* Leichtes Vergrößern bei Hover */
+  opacity: 0.8; /* Leichte Transparenz */
+}
+
+/* Hover-Effekt für den Namen */
+#name:hover {
+  color: #007bff; /* Ändert die Farbe des Namens */
+  transform: scale(1.05); /* Leichtes Vergrößern des Namens */
+}
+
+/* Logo */
+.logo {
+  height: 50px; /* Größe des Logos */
+  width: auto;
+  margin-right: 15px; /* Abstand zwischen Logo und Name */
+}
+
+/* Name */
+.name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333333; /* Dunkelgrauer Text */
+  margin: 0;
+}
+/* Navigation */
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Abstand zwischen den Links */
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  display: inline-block;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #333333; /* Dunkelgrauer Text */
+  font-size: 1.3em;
+  font-weight: 600;
+  padding: 10px 15px; /* Polsterung für bessere Klickbarkeit */
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden; /* Damit der Verlauf nur innerhalb des Links sichtbar ist */
+  transition: all 0.3s ease; /* Sanfte Übergänge */
+}
+
+/* Hover-Effekt */
+.navigation ul li a:hover {
+  color: #fff; /* Weißer Text */
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Farbverlauf */
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4); /* Größerer Schatten */
+  transform: scale(1.05); /* Leichte Vergrößerung für den 3D-Effekt */
+}
+
+/* Für den Randeffekt, wenn der Benutzer über den Link fährt */
+.navigation ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.navigation ul li a:hover::before {
+  transform: scaleX(1); /* Erweiterung des Randes */
+}
+
+/* Aktiv-Effekt */
+.navigation ul li a:active {
+  transform: translateY(0); /* Rückkehr zur Originalposition beim Klicken */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #007bff; /* Hintergrundfarbe des Footers */
+  color: white; /* Textfarbe im Footer */
+  padding: 15px 0; /* Innenabstand */
+  bottom: 0; /* Setzt den Footer an den unteren Rand der Seite */
+  left: 0;
+  width: 100%; /* Footer soll sich über die gesamte Breite erstrecken */
+  text-align: center; /* Text wird zentriert */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sanfter Schatten oben */
+  font-family: "Poppins", sans-serif;
+  z-index: 1000; /* Hohe Priorität, damit der Footer immer sichtbar bleibt */
+}
+
+/* Footer Inhalt */
+.footer-content p {
+  margin: 4px 0; /* Abstand zwischen den Absätzen */
+  color: white;
+  font-size: 1em; /* Schriftgröße */
+  font-weight: 400; /* Normalgewicht */
+  letter-spacing: 2px; /* Etwas Abstand zwischen den Buchstaben */
+}
+
+/* Styling für den Bereich mit Video als Profilbild */
+#intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f7f9fc; /* Heller Hintergrund */
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.profile-video {
+  border-radius: 20%;
+  width: 320px;
+  height: 320px;
+  object-fit: cover; /* Video gut zuschneiden */
+  margin-right: 30px; /* Abstand zwischen Video und Text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sanfter Schatten für einen hochwertigen Look */
+}
+
+.profile-image {
+  border-radius: 10%; /* Abgerundete Ecken für das Bild */
+  width: 320px; /* Breite des Bildes */
+  height: 400px; /* Höhe des Bildes */
+  object-fit: cover; /* Bild zuschneiden, um das Bild korrekt zu skalieren */
+  margin-right: 30px; /* Abstand zwischen Bild und Text */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Größerer, weicherer Schatten für einen modernen Look */
+  border: 4px solid #ffffff; /* Weißer, feiner Rand */
+  transition: all 0.3s ease; /* Sanfte Übergänge für Hover-Effekte */
+}
+
+.profile-image:hover {
+  transform: scale(1.05); /* Leichtes Vergrößern des Bildes bei Hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Größerer Schatten bei Hover */
+  border: 4px solid #007bff; /* Ändert die Randfarbe auf Blau bei Hover */
+}
+
+.text-content {
+  max-width: 800px; /* Maximale Breite für den Textbereich */
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #007bff;
+}
+
+p {
+  font-size: 1.2em;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.btn-download {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blauer Button */
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #0056b3; /* Dunklerer Blau beim Hover */
+}
+
+/* Abschnittsüberschriften */
+h2 {
+  font-size: 2.5em;
+  margin: 30px 0;
+  text-align: center;
+  color: #333;
+}
+
+h3 {
+  font-size: 1.8em;
+  margin: 15px 0;
+}
+
+/* Berufserfahrung Bereich */
+#experience {
+  padding: 50px 20px;
+  background-color: #f7f9fc; /* Heller Hintergrund für Abwechslung */
+  text-align: center; /* Überschrift zentrieren */
+}
+
+#experience h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #007bff; /* Hauptfarbe */
+}
+
+#experience ul {
+  list-style: none; /* Standard-Bulletpoints entfernen */
+  padding: 0;
+  margin: 0 auto; /* Zentrieren */
+  width: 85%; /* Boxen nehmen 85% der Breite ein */
+}
+
+/* Berufserfahrung Container */
+.experience-item {
+  background-color: #ffffff; /* Weißer Hintergrund für Karten */
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  text-align: left; /* Inhalt linksbündig */
+  display: grid; /* Grid für drei Spalten */
+  grid-template-columns: 120px 1fr 2fr; /* Drei Spalten: Logo, Position, Tätigkeiten */
+  grid-gap: 20px; /* Abstand zwischen Spalten */
+  align-items: start; /* Vertikale Ausrichtung oben */
+}
+
+/* Hover-Effekt */
+.experience-item:hover {
+  background-color: #f0f8ff; /* Helles Blau für den Hover-Effekt */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Vergrößerter Schatten */
+  transform: translateY(-5px); /* Container leicht nach oben verschieben */
+}
+
+/* Optional: Textfarbe ändern bei Hover */
+.experience-item:hover .job-title,
+.experience-item:hover .company-name {
+  color: #007bff; /* Blaue Textfarbe bei Hover */
+}
+
+/* Optional: Vergrößerung des Logos beim Hover */
+.experience-item:hover .company-logo {
+  transform: scale(1.1); /* Logo leicht vergrößern */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Unternehmenslogo und Name */
+.logo-container {
+  text-align: center;
+}
+
+.company-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain; /* Logo bleibt unverzerrt */
+  margin-bottom: 4px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+}
+
+.company-name {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Jobposition und Zeitdauer */
+.job-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.job-title {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.job-duration {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+/* Tätigkeiten */
+.job-description {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.job-description ul {
+  padding-left: 30px; /* Einzug für Liste */
+}
+
+.job-description ul li {
+  margin-bottom: 8px;
+  position: relative; /* Positionierung für das Häkchen */
+}
+
+.job-description ul li::before {
+  content: "✔"; /* Ein einfaches Häkchen als Symbol */
+  position: absolute;
+  left: -25px; /* Platz für das Häkchen */
+  top: 0;
+  color: #4caf50; /* Grünes Häkchen */
+  font-size: 1.2em; /* Größe des Symbols */
+}
+
+/* SKILLS */
+#skills {
+  padding: 50px 20px;
+  background-color: #f0f4f8; /* Leicht grauer Hintergrund */
+  text-align: center;
+}
+
+/* Container für die Skills */
+.skills-container {
+  margin: 0 auto; /* Zentriert den Container */
+  text-align: center; /* Text innerhalb des Containers zentrieren */
+  max-width: 90%; /* Container nimmt 90% der verfügbaren Breite ein */
+}
+
+.skill-logo {
+  max-width: 260px; /* Einheitliche Größe der Logos */
+  max-height: 130px; /* Einheitliche Größe der Logos */
+  margin: 0 auto; /* Abstand nach unten */
+}
+
+/* Titel der Skills-Sektion */
+#skills h2 {
+  font-size: 2.5em;
+  color: #007bff; /* Hauptfarbe */
+  margin-bottom: 30px;
+}
+
+/* Grid für die Karten */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  ); /* Auto-fill sorgt dafür, dass so viele Karten wie möglich angezeigt werden */
+  gap: 20px;
+  max-width: 100%; /* Maximale Breite auf 100% setzen */
+  margin: 0 auto; /* Zentriert den Grid-Container */
+  justify-items: center; /* Zentriert die Karten in ihren jeweiligen Grid-Spalten */
+}
+
+/* Stil für die Karten */
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  display: flex; /* Flexbox aktivieren */
+  flex-direction: column; /* Elemente vertikal anordnen */
+  height: 300px; /* Einheitliche Höhe für alle Karten */
+  overflow: hidden; /* verhindert, dass Inhalte aus der Box ragen */
+}
+
+/* Grid für die Karten */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 gleichmäßig verteilte Spalten */
+  gap: 20px;
+  max-width: 100%; /* Maximale Breite auf 100% setzen */
+  margin: 0 auto; /* Zentriert den Grid-Container */
+  justify-items: center; /* Zentriert die Karten in ihren jeweiligen Grid-Spalten */
+  grid-template-rows: auto; /* Flexibler Umgang mit den Reihen */
+}
+
+.skill-card:hover {
+  transform: translateY(-5px); /* Leichtes Heben */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Wrapper für Titel und Text */
+.text-wrapper {
+  margin-top: auto; /* Drückt den Wrapper an den unteren Rand */
+  text-align: center; /* Zentriert die Inhalte */
+}
+
+.skill-card h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0 0 0; /* Geringer Abstand über und unter dem Titel */
+  flex-grow: 0; /* Verhindert Dehnung */
+}
+
+.skill-card .skill-summary {
+  font-size: 1em;
+  color: #666;
+  margin-top: auto; /* Drückt den Absatz nach unten */
+  text-align: center; /* Zentriert den Text */
+  margin-bottom: 10px; /* Abstand zum unteren Rand der Karte */
+}
+
+.skill-card:hover .skill-summary {
+  color: #007bff; /* Änderung der Farbe beim Hovern */
+}
+
+/* Skills-Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparenter Hintergrund */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+}
+
+.modal-content h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: #333;
+}
+
+/* PORTFOLIO */
+#portfolio {
+  padding: 50px 20px;
+  background-color: #f7f9fc; /* Heller Hintergrund für den Portfolio-Bereich */
+  text-align: center;
+}
+
+#portfolio h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #007bff; /* Hauptfarbe */
+}
+
+#portfolio p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Zentrierung und maximale Breite des Inhalts */
+#portfolio .container {
+  max-width: 1200px;
+  margin: 0 auto; /* Zentriert den Container horizontal */
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Projektkarten */
+#portfolio .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Vergrößerung beim Hovern */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Statische Farbe des Textes */
+#portfolio .project-card:hover .skill-summary {
+  color: #007bff; /* Standardfarbe, z.B. dunkelgrau */
+  transition: color 0.3s ease; /* Sanfte Übergangsanimation für den Farbwechsel */
+}
+
+/* Bild innerhalb der Projektkarte */
+.project-card img {
+  max-height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #eee;
+}
+
+.project-card .content {
+  padding: 20px;
+  text-align: left;
+}
+
+.project-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* MODAL */
+.modal {
+  display: none; /* Unsichtbar, bis es aktiviert wird */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparenter Hintergrund */
+  overflow: auto; /* Ermöglicht das Scrollen, wenn der Inhalt zu groß ist */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 3px solid #888;
+  max-width: 900px; /* Maximale Breite */
+  border-radius: 10px;
+  width: 80%; /* Oder eine feste Breite */
+  text-align: left;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schattierung für 3D-Effekt */
+  overflow-y: auto; /* Ermöglicht vertikales Scrollen, wenn der Inhalt zu lang ist */
+  max-height: 80%; /* Verhindert, dass das Modal die ganze Höhe des Bildschirms einnimmt */
+}
+
+/* Titel des Modals */
+#modal-title {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 700; /* Hervorhebung des Titels */
+}
+
+/* Beschreibung des Modals */
+#modal-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px; /* Etwas Abstand nach der Beschreibung */
+}
+
+/* Optional: Stil für wichtige Punkte */
+#modal-description strong {
+  font-weight: bold;
+  color: #2a75b4; /* Eine dezente Farbe für Hervorhebungen */
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Übergangseffekt für Hover */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Akkordeon FAQ */ /* FAQ Section */
+#faq {
+  padding: 50px 20px;
+  background-color: #f7f9fc;
+  text-align: center;
+}
+
+#faq h2 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.faq-container {
+  margin: 0 auto;
+  text-align: left;
+  max-width: 800px;
+}
+
+/* Accordion Buttons */
+.accordion {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 15px 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 1.2em;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.accordion:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.accordion-icon {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.accordion.active .accordion-icon {
+  transform: rotate(180deg); /* Drehe den Pfeil um 180° */
+}
+
+/* Panels */
+.panel {
+  padding: 15px 20px;
+  display: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.panel p {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CONTACT ME */
+#contact {
+  padding: 50px 20px;
+  background-color: #e8f3ff; /* Sanfter Blauton */
+  text-align: center;
+  border-radius: 15px; /* Abgerundete Ecken für den gesamten Bereich */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für den gesamten Bereich */
+  margin: 0 auto;
+  max-width: 1200px; /* Maximale Breite für den gesamten Bereich */
+}
+
+/* Titel des Kontaktbereichs */
+#contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #007bff; /* Hauptfarbe */
+  font-weight: bold; /* Fettere Schrift für den Titel */
+}
+
+/* Flexbox für die Anordnung von Kontaktinfos und Formular */
+.contact-container {
+  display: flex;
+  justify-content: center; /* Zentriert den gesamten Inhalt */
+  align-items: center; /* Vertikale Ausrichtung */
+  gap: 40px;
+  flex-wrap: wrap; /* Für mobile Geräte */
+  border: 3px solid #007bff; /* Umrandung der Container für Kontaktinformationen und Formular */
+  padding: 20px;
+  border-radius: 10px; /* Abgerundete Ecken */
+  background-color: #ffffff; /* Weißer Hintergrund für den Container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Styling der Kontaktinformationen */
+.contact-info {
+  max-width: 350px; /* Maximale Breite für Kontaktinfos */
+  text-align: left;
+}
+
+/* Styling der einzelnen Kontakt-Items */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #007bff; /* Icon-Farbe */
+  font-weight: bold;
+}
+
+.contact-item i {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #007bff; /* Icon-Farbe */
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #007bff; /* Linkfarbe */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #0056b3; /* Dunklerer Farbton beim Hover */
+}
+
+/* Styling des Formulars */
+form {
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border: 1px solid #ddd; /* Feine Umrandung für das Formular */
+}
+
+/* Label und Input-Felder */
+form label {
+  font-size: 1em;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+form button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3; /* Dunkleres Blau beim Hover */
+}
+
+/* MEDIA */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 15px;
+    flex-direction: column; /* Header vertikal anordnen */
+    align-items: center; /* Zentrieren des gesamten Inhalts */
+  }
+
+  .hamburger {
+    display: block; /* Zeigt das Hamburger-Menü an */
+  }
+
+  .navigation ul {
+    display: none; /* Navigation ausblenden */
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .navigation.active ul {
+    display: flex; /* Navigation bei Aktivierung anzeigen */
+  }
+
+  .logo-container {
+    justify-content: center; /* Zentriert Logo und Name */
+    margin-bottom: 10px; /* Abstand zum Navigationsbereich */
+  }
+
+  .name {
+    font-size: 1.2em; /* Kleinere Schriftgröße für den Namen */
+    text-align: center; /* Zentriert den Namen */
+  }
+
+  .logo {
+    height: 40px; /* Kleinere Logo-Größe auf mobilen Geräten */
+  }
+
+  .navigation ul li a {
+    font-size: 1.2em; /* Größere Schriftgröße für Links auf mobilen Geräten */
+    padding: 12px 20px; /* Mehr Polsterung für bessere Klickbarkeit */
+  }
+
+  .intro-content {
+    flex-direction: column; /* Text und Video untereinander auf mobilen Geräten */
+    text-align: center;
+  }
+
+  .profile-video {
+    margin-right: 0;
+    margin-bottom: 20px; /* Abstand zwischen Video und Text auf kleineren Bildschirmen */
+    width: 200px; /* Kleinere Video-Dimensionen */
+    height: 200px;
+  }
+
+  .text-content {
+    max-width: 90%; /* Textbereich nimmt mehr Platz auf mobilen Geräten ein */
+  }
+
+  #intro h1 {
+    font-size: 2.5em;
+  }
+
+  #intro p {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  /* Für sehr kleine Bildschirme (z.B. Smartphones im Hochformat) */
+  #experience {
+    padding: 20px 10px; /* Weniger Innenabstand */
+  }
+
+  #experience h2 {
+    font-size: 1.5em; /* Überschrift weiter verkleinern */
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr; /* Einspaltiges Layout */
+    padding: 15px; /* Weniger Innenabstand */
+  }
+
+  .company-logo {
+    width: 60px;
+    height: 60px; /* Noch kleineres Logo */
+  }
+
+  /* Jobdetails und Logo nebeneinander */
+  .job-details {
+    display: flex; /* Flexbox für nebeneinander */
+    align-items: center; /* Vertikale Zentrierung */
+    padding-left: 1rem; /* Weniger Abstand zu Jobdetails */
+  }
+
+  .job-title {
+    font-size: 1.1em; /* Jobtitel weiter verkleinern */
+  }
+
+  .job-description ul {
+    padding-left: 10px; /* Weniger Einzug für Liste */
+    width: 100%; /* Liste soll volle Breite einnehmen */
+  }
+
+  /* Sicherstellen, dass die Jobbeschreibung den gesamten verfügbaren Platz einnimmt */
+  .job-description {
+    width: 100%; /* Volle Breite */
+    padding-left: 0; /* Entfernt unnötigen Einzug */
+    margin-top: 15px; /* Abstand zwischen Jobdetails und Jobbeschreibung */
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten auf mobilen Geräten */
+  }
+
+  #skills li {
+    width: 100%; /* Volle Breite für kleinere Geräte */
+    max-width: 300px; /* Maximale Breite für größere Smartphones */
+  }
+
+  #skills li::before {
+    font-size: 1.5em; /* Kleinere Icons */
+  }
+
+  #portfolio .projects {
+    grid-template-columns: 1fr; /* Eine Spalte auf kleinen Bildschirmen */
+  }
+
+  .contact-container {
+    flex-direction: column; /* Kontaktinfo und Formular untereinander auf kleineren Bildschirmen */
+    align-items: center;
+  }
+  .contact-info {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  form {
+    max-width: 100%;
+  }
+}
