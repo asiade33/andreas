@@ -483,6 +483,9 @@ h3 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Transparenter Hintergrund */
+  display: flex; /* Flexbox hinzufügen für bessere Zentrierung */
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center; /* Vertikal zentrieren */
 }
 
 .modal-content {
@@ -596,7 +599,7 @@ h3 {
   line-height: 1.6;
 }
 
-/* MODAL */
+/* PORTFOLIO-MODAL */
 .modal {
   display: none; /* Unsichtbar, bis es aktiviert wird */
   position: fixed;
@@ -606,6 +609,7 @@ h3 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Transparenter Hintergrund */
+
   overflow: auto; /* Ermöglicht das Scrollen, wenn der Inhalt zu groß ist */
 }
 
@@ -733,7 +737,7 @@ h3 {
 
 /* CONTACT ME */
 #contact {
-  padding: 50px 20px;
+  padding: 20px 20px;
   background-color: #e8f3ff; /* Sanfter Blauton */
   text-align: center;
   border-radius: 15px; /* Abgerundete Ecken für den gesamten Bereich */
@@ -745,7 +749,6 @@ h3 {
 /* Titel des Kontaktbereichs */
 #contact h2 {
   font-size: 2.5em;
-  margin-bottom: 30px;
   color: #007bff; /* Hauptfarbe */
   font-weight: bold; /* Fettere Schrift für den Titel */
 }
@@ -844,41 +847,56 @@ form button:hover {
   background-color: #0056b3; /* Dunkleres Blau beim Hover */
 }
 
-/* MEDIA */
+/* Media Queries für Bildschirmgrößen bis max. 768px */
 @media screen and (max-width: 768px) {
+  /* Header Anpassungen */
   .header {
     padding: 10px 15px;
-    flex-direction: column; /* Header vertikal anordnen */
-    align-items: center; /* Zentrieren des gesamten Inhalts */
-  }
-
-  .hamburger {
-    display: block; /* Zeigt das Hamburger-Menü an */
-  }
-
-  .navigation ul {
-    display: none; /* Navigation ausblenden */
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .navigation.active ul {
-    display: flex; /* Navigation bei Aktivierung anzeigen */
+    display: flex; /* Header horizontal ausrichten */
+    flex-direction: row; /* Horizontal, um Logo, Titel und Hamburger auf einer Linie zu halten */
+    align-items: center; /* Vertikale Ausrichtung */
+    justify-content: space-between; /* Platz zwischen Logo/Titel und Hamburger */
   }
 
   .logo-container {
-    justify-content: center; /* Zentriert Logo und Name */
-    margin-bottom: 10px; /* Abstand zum Navigationsbereich */
+    display: flex; /* Logo und Name nebeneinander */
+    align-items: center;
+    gap: 10px; /* Abstand zwischen Logo und Name */
   }
 
   .name {
     font-size: 1.2em; /* Kleinere Schriftgröße für den Namen */
-    text-align: center; /* Zentriert den Namen */
+    text-align: left; /* Text linksbündig */
   }
 
   .logo {
     height: 40px; /* Kleinere Logo-Größe auf mobilen Geräten */
+  }
+
+  .hamburger {
+    display: block; /* Zeigt das Hamburger-Menü an */
+    position: absolute;
+    top: 10px; /* Abstand vom oberen Rand */
+    right: 10px; /* Abstand vom rechten Rand */
+    z-index: 1000; /* Sicherstellen, dass es über anderen Inhalten liegt */
+  }
+
+  .navigation ul {
+    display: none; /* Navigation standardmäßig ausblenden */
+    flex-direction: column; /* Vertikale Anordnung der Navigationslinks */
+    gap: 15px; /* Abstand zwischen Links */
+    align-items: flex-start; /* Links ausrichten */
+    background-color: #ffffff; /* Hintergrundfarbe für die Navigation */
+    position: absolute; /* Position für Overlay-Effekt */
+    top: 50px; /* Platzierung unter dem Header */
+    right: 0;
+    width: 100%; /* Navigation nimmt die gesamte Breite ein */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation.active ul {
+    display: flex; /* Navigation bei Aktivierung anzeigen */
   }
 
   .navigation ul li a {
@@ -886,6 +904,7 @@ form button:hover {
     padding: 12px 20px; /* Mehr Polsterung für bessere Klickbarkeit */
   }
 
+  /* Intro-Content Anpassungen */
   .intro-content {
     flex-direction: column; /* Text und Video untereinander auf mobilen Geräten */
     text-align: center;
@@ -893,7 +912,7 @@ form button:hover {
 
   .profile-video {
     margin-right: 0;
-    margin-bottom: 20px; /* Abstand zwischen Video und Text auf kleineren Bildschirmen */
+    margin-bottom: 20px; /* Abstand zwischen Video und Text */
     width: 200px; /* Kleinere Video-Dimensionen */
     height: 200px;
   }
@@ -914,7 +933,7 @@ form button:hover {
     font-size: 2em;
   }
 
-  /* Für sehr kleine Bildschirme (z.B. Smartphones im Hochformat) */
+  /* Experience Bereich Anpassungen */
   #experience {
     padding: 20px 10px; /* Weniger Innenabstand */
   }
@@ -929,11 +948,12 @@ form button:hover {
   }
 
   .company-logo {
-    width: 60px;
-    height: 60px; /* Noch kleineres Logo */
+    width: 140px;
+    height: 140px; /* Logo-Größe */
+    display: block; /* Block-Element, damit Zentrierung funktioniert */
+    margin: 0 auto 10px auto; /* Zentrierung horizontal und Abstand nach unten */
   }
 
-  /* Jobdetails und Logo nebeneinander */
   .job-details {
     display: flex; /* Flexbox für nebeneinander */
     align-items: center; /* Vertikale Zentrierung */
@@ -949,38 +969,117 @@ form button:hover {
     width: 100%; /* Liste soll volle Breite einnehmen */
   }
 
-  /* Sicherstellen, dass die Jobbeschreibung den gesamten verfügbaren Platz einnimmt */
   .job-description {
     width: 100%; /* Volle Breite */
     padding-left: 0; /* Entfernt unnötigen Einzug */
     margin-top: 15px; /* Abstand zwischen Jobdetails und Jobbeschreibung */
   }
 
+  /* Skills Abschnitt Anpassungen */ /* Skills Abschnitt Anpassungen */
+  #skills {
+    padding: 30px 15px; /* Weniger Abstand auf mobilen Geräten */
+  }
+
+  #skills h2 {
+    font-size: 2em; /* Kleineren Titel auf mobilen Geräten */
+  }
+
+  .skills-container {
+    max-width: 100%;
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 Spalten auf mobilen Geräten */
+    display: grid;
+    grid-template-columns: 1fr; /* Auf mobilen Geräten nur eine Spalte */
+    gap: 15px; /* Abstand zwischen den Karten */
   }
 
-  #skills li {
-    width: 100%; /* Volle Breite für kleinere Geräte */
-    max-width: 300px; /* Maximale Breite für größere Smartphones */
+  .skill-card {
+    height: auto; /* Flexible Höhe auf mobilen Geräten */
+    padding: 15px; /* Weniger Innenabstand */
   }
 
-  #skills li::before {
-    font-size: 1.5em; /* Kleinere Icons */
+  .skill-card h3 {
+    font-size: 1.2em; /* Kleineren Text für den Titel */
   }
 
-  #portfolio .projects {
-    grid-template-columns: 1fr; /* Eine Spalte auf kleinen Bildschirmen */
+  .skill-card .skill-summary {
+    font-size: 0.9em; /* Kleineren Text für die Zusammenfassung */
+  }
+
+  /* Modal Anpassungen */
+  .modal {
+    display: none; /* Flexbox für Zentrierung */
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: center; /* Vertikal zentrieren */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%; /* Breite für kleinere Bildschirme anpassen */
+    text-align: left;
+    position: relative;
+  }
+
+  .modal-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .modal-content p {
+    font-size: 1.2em;
+    color: #666;
+  }
+
+  .modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    color: #999;
+    cursor: pointer;
+  }
+
+  .modal .close:hover {
+    color: #333;
+  }
+
+  /* Kontaktbereich Anpassungen */
+
+  #contact {
+    display: flex;
+    flex-direction: column; /* Kinder untereinander anordnen */
+    justify-content: center; /* Zentriere den Inhalt vertikal */
+    align-items: center; /* Zentriere den Inhalt horizontal */
+    padding: 20px;
+    max-width: 96%; /* Begrenze die maximale Breite */
+    margin: 0 auto; /* Zentriere den gesamten Kontaktbereich */
   }
 
   .contact-container {
-    flex-direction: column; /* Kontaktinfo und Formular untereinander auf kleineren Bildschirmen */
+    display: flex;
+    flex-direction: column;
+    width: 90%; /* Flexible Breite */
+    max-width: 800px; /* Begrenzung der maximalen Breite */
+    margin: 0 auto; /* Zentriere den Container */
     align-items: center;
   }
+
   .contact-info {
     max-width: 100%;
     margin-bottom: 20px;
   }
+
   form {
     max-width: 100%;
   }
