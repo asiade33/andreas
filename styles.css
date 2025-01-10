@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Anpassung je nach Höhe deiner Navigationsleiste */
+}
+
 /* Allgemeine Einstellungen */
 body {
   font-family: "Roboto", sans-serif;
