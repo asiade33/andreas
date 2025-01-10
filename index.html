@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    <header class="header">
+    <header id="home" class="header">
       <div class="logo-container">
         <img
           src="https://i.imgur.com/PdJ48Ut.png"
@@ -40,8 +40,8 @@
       </div>
       <nav class="navigation">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#" onclick="scrollToTop()">Home</a></li>
+          <li><a href="#intro">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -526,8 +526,8 @@
 
 <!-- Kontaktformular -->
 <form action="https://formspree.io/f/xzzzkwgp" method="POST" enctype="multipart/form-data">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required />
+  <label for="sendername">Name:</label>
+  <input type="text" id="sendername" name="name" required />
   
   <label for="email">Email:</label>
   <input type="email" id="email" name="email" required />
@@ -549,6 +549,9 @@
 
   <button type="submit">Send Message</button>
 </form>
+
+
+
        
       </div>
     </section>
