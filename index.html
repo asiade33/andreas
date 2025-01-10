@@ -539,16 +539,23 @@
   <label for="attachment" class="file-upload">Attachment</label>
   
   <!-- Datei-Input -->
-  <input type="file" id="attachment" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .docx" required />
-  
+  <input type="file" id="attachment" name="attachment[]" accept=".jpg, .jpeg, .png, .pdf, .docx" multiple required />  
   <small>max 10 mb</small>
   <small>allowed file types: .jpg, .jpeg, .png, .pdf, .docx</small>
+
+    <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
+    <div id="file-confirmation" style="display: none; color: green; margin-top: 10px;">
+      File attached successfully!
+    </div>
 
   <!-- Extra Abstand vor dem Button -->
   <div style="margin-bottom: 20px;"></div>
 
   <button type="submit">Send Message</button>
 </form>
+
+
+
 
        
       </div>
