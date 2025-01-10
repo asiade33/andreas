@@ -26,10 +26,21 @@ document.querySelector("form").addEventListener("submit", function (event) {
   // Überprüfen, ob eine Datei ausgewählt wurde
   if (file && file.size > 10 * 1024 * 1024) {
     // 10 MB in Bytes
-    alert(
-      "Die Datei ist zu groß. Bitte wählen Sie eine Datei, die kleiner als 10 MB ist."
-    );
+    alert("Attachment too big, please keep it below 10 MB.");
     event.preventDefault(); // Formular nicht absenden
+  }
+});
+
+// JavaScript für die Anzeige der Bestätigungsmeldung
+const fileInput = document.getElementById("attachment");
+const confirmationMessage = document.getElementById("file-confirmation");
+
+// Wenn eine Datei ausgewählt wird, zeigen wir die Bestätigungsmeldung an
+fileInput.addEventListener("change", function () {
+  if (fileInput.files.length > 0) {
+    confirmationMessage.style.display = "block"; // Zeige Bestätigung an
+  } else {
+    confirmationMessage.style.display = "none"; // Verstecke Bestätigung
   }
 });
 
