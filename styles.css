@@ -1,1257 +1,818 @@
-/* Resetting default margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 60px; /* Anpassung je nach Höhe deiner Navigationsleiste */
-}
-
-/* Allgemeine Einstellungen */
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 80px; /* Abstand für den fixierten Header */
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    1
-  ); /* Weißer Hintergrund mit voller Deckkraft */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Schatten für modernen Look */
-  position: fixed; /* Fixiert den Header beim Scrollen */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: background-color 0.3s ease-in-out; /* Übergang für Hintergrundfarbe */
-}
-
-/* Hamburger-Menü */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  font-size: 30px;
-  color: #333333;
-  z-index: 1100;
-}
-
-/* Navigation (standardmäßig verborgen auf mobilen Geräten) */
-.navigation {
-  display: flex;
-}
-
-/* Logo-Container */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-/* Hover-Effekte für Logo und Name */
-#logo,
-#name {
-  cursor: pointer; /* Zeigt den Hand-Cursor an, um anzuzeigen, dass es klickbar ist */
-  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease; /* Sanfte Übergänge für die Effekte */
-}
-
-/* Hover-Effekt für das Logo */
-#logo:hover {
-  transform: scale(1.1); /* Leichtes Vergrößern bei Hover */
-  opacity: 0.8; /* Leichte Transparenz */
-}
-
-/* Hover-Effekt für den Namen */
-#name:hover {
-  color: #007bff; /* Ändert die Farbe des Namens */
-  transform: scale(1.05); /* Leichtes Vergrößern des Namens */
-}
-
-/* Logo */
-.logo {
-  height: 50px; /* Größe des Logos */
-  width: auto;
-  margin-right: 15px; /* Abstand zwischen Logo und Name */
-}
-
-/* Name */
-.name {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333333; /* Dunkelgrauer Text */
-  margin: 0;
-}
-/* Navigation */
-.navigation ul {
-  list-style: none;
-  display: flex;
-  gap: 30px; /* Abstand zwischen den Links */
-  margin: 0;
-  padding: 0;
-}
-
-.navigation ul li {
-  display: inline-block;
-}
-
-.navigation ul li a {
-  text-decoration: none;
-  color: #333333; /* Dunkelgrauer Text */
-  font-size: 1.3em;
-  font-weight: 600;
-  padding: 10px 15px; /* Polsterung für bessere Klickbarkeit */
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden; /* Damit der Verlauf nur innerhalb des Links sichtbar ist */
-  transition: all 0.3s ease; /* Sanfte Übergänge */
-}
-
-/* Hover-Effekt */
-.navigation ul li a:hover {
-  color: #fff; /* Weißer Text */
-  background: linear-gradient(45deg, #007bff, #0056b3); /* Farbverlauf */
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4); /* Größerer Schatten */
-  transform: scale(1.05); /* Leichte Vergrößerung für den 3D-Effekt */
-}
-
-/* Für den Randeffekt, wenn der Benutzer über den Link fährt */
-.navigation ul li a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 123, 255, 0.2);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease;
-}
-
-.navigation ul li a:hover::before {
-  transform: scaleX(1); /* Erweiterung des Randes */
-}
-
-/* Aktiv-Effekt */
-.navigation ul li a:active {
-  transform: translateY(0); /* Rückkehr zur Originalposition beim Klicken */
-}
-
-/* Footer Styling */
-footer {
-  background-color: #007bff; /* Hintergrundfarbe des Footers */
-  color: white; /* Textfarbe im Footer */
-  padding: 15px 0; /* Innenabstand */
-  bottom: 0; /* Setzt den Footer an den unteren Rand der Seite */
-  left: 0;
-  width: 100%; /* Footer soll sich über die gesamte Breite erstrecken */
-  text-align: center; /* Text wird zentriert */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sanfter Schatten oben */
-  font-family: "Poppins", sans-serif;
-  z-index: 1000; /* Hohe Priorität, damit der Footer immer sichtbar bleibt */
-}
-
-/* Footer Inhalt */
-.footer-content p {
-  margin: 4px 0; /* Abstand zwischen den Absätzen */
-  color: white;
-  font-size: 1em; /* Schriftgröße */
-  font-weight: 400; /* Normalgewicht */
-  letter-spacing: 2px; /* Etwas Abstand zwischen den Buchstaben */
-}
-
-/* Styling für den Bereich mit Video als Profilbild */
-#intro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #f7f9fc; /* Heller Hintergrund */
-}
-
-.intro-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  width: 100%;
-}
-
-.profile-video {
-  border-radius: 20%;
-  width: 320px;
-  height: 320px;
-  object-fit: cover; /* Video gut zuschneiden */
-  margin-right: 30px; /* Abstand zwischen Video und Text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sanfter Schatten für einen hochwertigen Look */
-}
-
-.profile-image {
-  border-radius: 10%; /* Abgerundete Ecken für das Bild */
-  width: 320px; /* Breite des Bildes */
-  height: 400px; /* Höhe des Bildes */
-  object-fit: cover; /* Bild zuschneiden, um das Bild korrekt zu skalieren */
-  margin-right: 30px; /* Abstand zwischen Bild und Text */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Größerer, weicherer Schatten für einen modernen Look */
-  border: 4px solid #ffffff; /* Weißer, feiner Rand */
-  transition: all 0.3s ease; /* Sanfte Übergänge für Hover-Effekte */
-}
-
-.profile-image:hover {
-  transform: scale(1.05); /* Leichtes Vergrößern des Bildes bei Hover */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Größerer Schatten bei Hover */
-  border: 4px solid #007bff; /* Ändert die Randfarbe auf Blau bei Hover */
-}
-
-.text-content {
-  max-width: 800px; /* Maximale Breite für den Textbereich */
-  font-family: "Poppins", sans-serif;
-}
-
-h1 {
-  font-size: 2.5em;
-  color: #007bff;
-}
-
-p {
-  font-size: 1.2em;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Button Styling */
-.btn-download {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff; /* Blauer Button */
-  color: white;
-  font-size: 1.2em;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-download:hover {
-  background-color: #0056b3; /* Dunklerer Blau beim Hover */
-}
-
-/* Abschnittsüberschriften */
-h2 {
-  font-size: 2.5em;
-  margin: 30px 0;
-  text-align: center;
-  color: #333;
-}
-
-h3 {
-  font-size: 1.8em;
-  margin: 15px 0;
-}
-
-/* Berufserfahrung Bereich */
-#experience {
-  padding: 50px 20px;
-  background-color: #f7f9fc; /* Heller Hintergrund für Abwechslung */
-  text-align: center; /* Überschrift zentrieren */
-}
-
-#experience h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  color: #007bff; /* Hauptfarbe */
-}
-
-#experience ul {
-  list-style: none; /* Standard-Bulletpoints entfernen */
-  padding: 0;
-  margin: 0 auto; /* Zentrieren */
-  width: 85%; /* Boxen nehmen 85% der Breite ein */
-}
-
-/* Berufserfahrung Container */
-.experience-item {
-  background-color: #ffffff; /* Weißer Hintergrund für Karten */
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 10px; /* Abgerundete Ecken */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-  text-align: left; /* Inhalt linksbündig */
-  display: grid; /* Grid für drei Spalten */
-  grid-template-columns: 120px 1fr 2fr; /* Drei Spalten: Logo, Position, Tätigkeiten */
-  grid-gap: 20px; /* Abstand zwischen Spalten */
-  align-items: start; /* Vertikale Ausrichtung oben */
-}
-
-/* Hover-Effekt */
-.experience-item:hover {
-  background-color: #f0f8ff; /* Helles Blau für den Hover-Effekt */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Vergrößerter Schatten */
-  transform: translateY(-5px); /* Container leicht nach oben verschieben */
-}
-
-/* Optional: Textfarbe ändern bei Hover */
-.experience-item:hover .job-title,
-.experience-item:hover .company-name {
-  color: #007bff; /* Blaue Textfarbe bei Hover */
-}
-
-/* Optional: Vergrößerung des Logos beim Hover */
-.experience-item:hover .company-logo {
-  transform: scale(1.1); /* Logo leicht vergrößern */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Unternehmenslogo und Name */
-.logo-container {
-  text-align: center;
-}
-
-.company-logo {
-  width: 130px;
-  height: 130px;
-  object-fit: contain; /* Logo bleibt unverzerrt */
-  margin-bottom: 4px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 6px;
-}
-
-.company-name {
-  font-size: 0.9em;
-  color: #555;
-}
-
-/* Jobposition und Zeitdauer */
-.job-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 2rem;
-}
-
-.job-title {
-  font-size: 1.5em;
-  margin-bottom: 5px;
-  color: #333;
-  font-weight: 600;
-}
-
-.job-duration {
-  font-size: 0.9em;
-  color: #777;
-  margin-bottom: 5px;
-}
-
-/* Tätigkeiten */
-.job-description {
-  font-size: 1em;
-  color: #555;
-  line-height: 1.6;
-}
-
-.job-description ul {
-  padding-left: 30px; /* Einzug für Liste */
-}
-
-.job-description ul li {
-  margin-bottom: 8px;
-  position: relative; /* Positionierung für das Häkchen */
-}
-
-.job-description ul li::before {
-  content: "✔"; /* Ein einfaches Häkchen als Symbol */
-  position: absolute;
-  left: -25px; /* Platz für das Häkchen */
-  top: 0;
-  color: #4caf50; /* Grünes Häkchen */
-  font-size: 1.2em; /* Größe des Symbols */
-}
-
-/* SKILLS */
-#skills {
-  padding: 50px 20px;
-  background-color: #f0f4f8; /* Leicht grauer Hintergrund */
-  text-align: center;
-}
-
-/* Container für die Skills */
-.skills-container {
-  margin: 0 auto; /* Zentriert den Container */
-  text-align: center; /* Text innerhalb des Containers zentrieren */
-  max-width: 90%; /* Container nimmt 90% der verfügbaren Breite ein */
-}
-
-.skill-logo {
-  max-width: 260px; /* Einheitliche Größe der Logos */
-  max-height: 130px; /* Einheitliche Größe der Logos */
-  margin: 0 auto; /* Abstand nach unten */
-}
-
-/* Titel der Skills-Sektion */
-#skills h2 {
-  font-size: 2.5em;
-  color: #007bff; /* Hauptfarbe */
-  margin-bottom: 30px;
-}
-
-/* Grid für die Karten */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* Auto-fill sorgt dafür, dass so viele Karten wie möglich angezeigt werden */
-  gap: 20px;
-  max-width: 100%; /* Maximale Breite auf 100% setzen */
-  margin: 0 auto; /* Zentriert den Grid-Container */
-  justify-items: center; /* Zentriert die Karten in ihren jeweiligen Grid-Spalten */
-}
-
-/* Stil für die Karten */
-.skill-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  text-align: center;
-  width: 100%;
-  display: flex; /* Flexbox aktivieren */
-  flex-direction: column; /* Elemente vertikal anordnen */
-  height: 300px; /* Einheitliche Höhe für alle Karten */
-  overflow: hidden; /* verhindert, dass Inhalte aus der Box ragen */
-}
-
-/* Grid für die Karten */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 gleichmäßig verteilte Spalten */
-  gap: 20px;
-  max-width: 100%; /* Maximale Breite auf 100% setzen */
-  margin: 0 auto; /* Zentriert den Grid-Container */
-  justify-items: center; /* Zentriert die Karten in ihren jeweiligen Grid-Spalten */
-  grid-template-rows: auto; /* Flexibler Umgang mit den Reihen */
-}
-
-.skill-card:hover {
-  transform: translateY(-5px); /* Leichtes Heben */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Wrapper für Titel und Text */
-.text-wrapper {
-  margin-top: auto; /* Drückt den Wrapper an den unteren Rand */
-  text-align: center; /* Zentriert die Inhalte */
-}
-
-.skill-card h3 {
-  font-size: 1.5em;
-  color: #333;
-  margin: 10px 0 0 0; /* Geringer Abstand über und unter dem Titel */
-  flex-grow: 0; /* Verhindert Dehnung */
-}
-
-.skill-card .skill-summary {
-  font-size: 1em;
-  color: #666;
-  margin-top: auto; /* Drückt den Absatz nach unten */
-  text-align: center; /* Zentriert den Text */
-  margin-bottom: 10px; /* Abstand zum unteren Rand der Karte */
-}
-
-.skill-card:hover .skill-summary {
-  color: #007bff; /* Änderung der Farbe beim Hovern */
-}
-
-/* Modal für Skills + Portfolio */
-.modal {
-  display: none; /* Unsichtbar, bis es aktiviert wird */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Transparenter Hintergrund */
-  overflow: auto; /* Ermöglicht das Scrollen, wenn der Inhalt zu groß ist */
-  justify-content: center; /* Horizontal zentrieren */
-  align-items: center; /* Vertikal zentrieren */
-}
-
-/* Modal-Inhalt */
-.modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 20px;
-  border: 3px solid #888;
-  max-width: 900px; /* Maximale Breite */
-  width: 80%; /* Oder eine feste Breite */
-  border-radius: 10px;
-  text-align: left;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schattierung für 3D-Effekt */
-  overflow-y: auto; /* Ermöglicht vertikales Scrollen, wenn der Inhalt zu lang ist */
-  max-height: 80%; /* Verhindert, dass das Modal die ganze Höhe des Bildschirms einnimmt */
-}
-
-/* Titel des Modals */
-#modal-title {
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  color: #333;
-  font-weight: 700; /* Hervorhebung des Titels */
-}
-
-/* Beschreibung des Modals */
-#modal-description {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 20px; /* Etwas Abstand nach der Beschreibung */
-}
-
-/* Optional: Stil für wichtige Punkte */
-#modal-description strong {
-  font-weight: bold;
-  color: #2a75b4; /* Eine dezente Farbe für Hervorhebungen */
-}
-
-.modal-details ul {
-  margin-left: 20px; /* Abstand vom linken Rand */
-  padding-left: 20px; /* Optional: zusätzlicher Innenabstand */
-  list-style-position: outside; /* Bullet Points außerhalb des Inhalts */
-}
-
-/* Schließen-Button */
-.modal .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.3s ease; /* Übergangseffekt für Hover */
-}
-
-/* PORTFOLIO */
-#portfolio {
-  padding: 50px 20px;
-  background-color: #f7f9fc; /* Heller Hintergrund für den Portfolio-Bereich */
-  text-align: center;
-}
-
-#portfolio h2 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: #007bff; /* Hauptfarbe */
-}
-
-#portfolio p {
-  font-size: 1.2em;
-  color: #666;
-  margin-bottom: 25px;
-}
-
-/* Zentrierung und maximale Breite des Inhalts */
-#portfolio .container {
-  max-width: 1200px;
-  margin: 0 auto; /* Zentriert den Container horizontal */
-  padding: 0 20px;
-  text-align: center;
-}
-
-/* Projektkarten */
-#portfolio .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: scale(1.05); /* Vergrößerung beim Hovern */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Statische Farbe des Textes */
-#portfolio .project-card:hover .skill-summary {
-  color: #007bff; /* Standardfarbe, z.B. dunkelgrau */
-  transition: color 0.3s ease; /* Sanfte Übergangsanimation für den Farbwechsel */
-}
-
-/* Bild innerhalb der Projektkarte */
-.project-card img {
-  max-height: 200px;
-  object-fit: cover;
-  border-bottom: 2px solid #eee;
-}
-
-.project-card .content {
-  padding: 20px;
-  text-align: left;
-}
-
-.project-card h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.project-card p {
-  font-size: 1em;
-  color: #666;
-  line-height: 1.6;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Akkordeon FAQ */ /* FAQ Section */
-#faq {
-  padding: 50px 20px;
-  background-color: #f7f9fc;
-  text-align: center;
-}
-
-#faq h2 {
-  font-size: 2.5em;
-  color: #007bff;
-  margin-bottom: 30px;
-}
-
-.faq-container {
-  margin: 0 auto;
-  text-align: left;
-  max-width: 800px;
-}
-
-/* Accordion Buttons */
-.accordion {
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  padding: 15px 20px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  font-size: 1.2em;
-  border-radius: 10px;
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.accordion:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-.accordion-icon {
-  font-size: 1.2em;
-  transition: transform 0.3s ease;
-}
-
-.accordion.active .accordion-icon {
-  transform: rotate(180deg); /* Drehe den Pfeil um 180° */
-}
-
-/* Panels */
-.panel {
-  padding: 15px 20px;
-  display: none;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
-
-.panel p {
-  font-size: 1em;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* CONTACT ME */
-#contact {
-  padding: 20px 20px;
-  background-color: #e8f3ff; /* Sanfter Blauton */
-  text-align: center;
-  border-radius: 15px; /* Abgerundete Ecken für den gesamten Bereich */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für den gesamten Bereich */
-  margin: 0 auto;
-  max-width: 1200px; /* Maximale Breite für den gesamten Bereich */
-}
-
-/* Titel des Kontaktbereichs */
-#contact h2 {
-  font-size: 2.5em;
-  color: #007bff; /* Hauptfarbe */
-  font-weight: bold; /* Fettere Schrift für den Titel */
-}
-
-/* Flexbox für die Anordnung von Kontaktinfos und Formular */
-.contact-container {
-  display: flex;
-  justify-content: center; /* Zentriert den gesamten Inhalt */
-  align-items: center; /* Vertikale Ausrichtung */
-  gap: 40px;
-  flex-wrap: wrap; /* Für mobile Geräte */
-  border: 3px solid #007bff; /* Umrandung der Container für Kontaktinformationen und Formular */
-  padding: 20px;
-  border-radius: 10px; /* Abgerundete Ecken */
-  background-color: #ffffff; /* Weißer Hintergrund für den Container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-}
-
-/* Styling der Kontaktinformationen */
-.contact-info {
-  max-width: 350px; /* Maximale Breite für Kontaktinfos */
-  text-align: left;
-}
-
-/* Styling der einzelnen Kontakt-Items */
-.contact-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 1.2em;
-  color: #007bff; /* Icon-Farbe */
-  font-weight: bold;
-}
-
-.contact-item i {
-  margin-right: 10px;
-  font-size: 1.5em;
-  color: #007bff; /* Icon-Farbe */
-}
-
-.contact-item a {
-  text-decoration: none;
-  color: #007bff; /* Linkfarbe */
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-  color: #0056b3; /* Dunklerer Farbton beim Hover */
-}
-
-/* KONTAKTFORMULAR */
-form {
-  max-width: 900px;
-  width: 60%;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  border: 1px solid #ddd; /* Feine Umrandung für das Formular */
-}
-
-/* Label und Input-Felder */
-form label {
-  font-size: 1em;
-  color: #333;
-  display: block;
-  margin-bottom: 10px;
-}
-
-form input,
-form textarea {
-  width: auto;
-  min-width: 100%; /* Sicherstellen, dass die Felder immer mindestens die Breite des Formulars haben */
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-
-/* Dynamische Höhe für Textarea, basierend auf der Textlänge */
-form textarea {
-  min-height: 80px; /* Mindesthöhe für das Textfeld */
-  resize: vertical; /* Möglichkeit zur manuellen Größenänderung des Textfeldes */
-  height: auto; /* Die Höhe soll sich basierend auf dem Inhalt anpassen */
-}
-
-/* Button Styling */
-form button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #0056b3; /* Dunkleres Blau beim Hover */
-}
-
-/* CSS für das Datei-Input-Feld */
-input[type="file"] {
-  display: none; /* Verstecke das Standard-Input */
-}
-
-/* Benutzerdefiniertes Button-Styling */
-.file-upload {
-  display: inline-block;
-  background-color: #6c757d; /* Dunkles Grau */
-  color: white;
-  padding: 8px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.file-upload:hover {
-  background-color: #5a6368; /* Dunkleres Grau bei Hover */
-}
-
-/* Optional: Platz für zusätzliche Gestaltung */
-small {
-  display: block;
-  color: #777;
-}
-
-/* Stil für Platzhaltertext */
-input::placeholder,
-textarea::placeholder {
-  font-size: 12px; /* Kleinere Schriftgröße */
-  color: #777; /* Graue Farbe für den Platzhalter */
-  font-style: italic; /* Optional: kursiv */
-}
-
-/* Stil für die kleinen Hinweise */
-small {
-  font-size: 10px;
-  color: #777;
-}
-
-/* CSS für die thank-you-page */
-.thank-you-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Höhe auf 100% der Ansichtshöhe setzen */
-  margin: 0; /* Entfernt jeglichen Standardabstand */
-  background-color: #f5f9fc; /* Heller Blauton für den Hintergrund */
-}
-
-.thanks-container {
-  text-align: center;
-  background-color: #ffffff; /* Weißer Hintergrund */
-  padding: 40px;
-  border-radius: 10px; /* Abgerundete Ecken */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-  max-width: 500px;
-  width: 90%; /* Maximale Breite auf 90% der Fensterbreite setzen */
-}
-
-.thanks-container h1 {
-  font-size: 2.5rem; /* Große Schrift für die Überschrift */
-  color: #0077cc; /* Helles Blau für den Titel */
-  margin-bottom: 20px;
-}
-
-.thanks-container p {
-  font-size: 1.2rem; /* Lesbare Schriftgröße für den Text */
-  color: #555; /* Dezentes Grau für den Text */
-  line-height: 1.5; /* Erhöhte Zeilenhöhe für bessere Lesbarkeit */
-}
-
-/* Container für das Impressum */
-.impressum-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Styling */
-.impressum-container h1 {
-  font-size: 2em;
-  color: #007bff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Text Styling */
-.impressum-container p {
-  font-size: 1em;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-/* Stronger Text (e.g. Section Headers) */
-.impressum-container strong {
-  font-weight: 600;
-  color: #333;
-}
-
-/* Styling für Links */
-.impressum-container a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.impressum-container a:hover {
-  text-decoration: underline;
-}
-
-/* Stil für das Impressum im Footer - kleinere Schrift */
-.footer-impressum {
-  font-size: 0.8em; /* Kleinere Schriftgröße */
-  color: whitesmoke; /* Standardfarbe für den Text */
-  text-decoration: none; /* Keine Unterstreichung */
-}
-
-/* Media Queries für Bildschirmgrößen bis max. 768px */
-@media screen and (max-width: 768px) {
-  /* Header Anpassungen */
-  .header {
-    padding: 10px 15px;
-    display: flex; /* Header horizontal ausrichten */
-    flex-direction: row; /* Horizontal, um Logo, Titel und Hamburger auf einer Linie zu halten */
-    align-items: center; /* Vertikale Ausrichtung */
-    justify-content: space-between; /* Platz zwischen Logo/Titel und Hamburger */
-  }
-
-  .logo-container {
-    display: flex; /* Logo und Name nebeneinander */
-    align-items: center;
-    gap: 10px; /* Abstand zwischen Logo und Name */
-  }
-
-  .name {
-    font-size: 1.2em; /* Kleinere Schriftgröße für den Namen */
-    text-align: left; /* Text linksbündig */
-  }
-
-  .logo {
-    height: 40px; /* Kleinere Logo-Größe auf mobilen Geräten */
-  }
-
-  .hamburger {
-    display: block; /* Zeigt das Hamburger-Menü an */
-    position: absolute;
-    top: 10px; /* Abstand vom oberen Rand */
-    right: 10px; /* Abstand vom rechten Rand */
-    z-index: 1000; /* Sicherstellen, dass es über anderen Inhalten liegt */
-  }
-
-  .navigation ul {
-    display: none; /* Navigation standardmäßig ausblenden */
-    flex-direction: column; /* Vertikale Anordnung der Navigationslinks */
-    gap: 15px; /* Abstand zwischen Links */
-    align-items: flex-start; /* Links ausrichten */
-    background-color: #ffffff; /* Hintergrundfarbe für die Navigation */
-    position: absolute; /* Position für Overlay-Effekt */
-    top: 50px; /* Platzierung unter dem Header */
-    right: 0;
-    width: 100%; /* Navigation nimmt die gesamte Breite ein */
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .navigation.active ul {
-    display: flex; /* Navigation bei Aktivierung anzeigen */
-  }
-
-  .navigation ul li a {
-    font-size: 1.2em; /* Größere Schriftgröße für Links auf mobilen Geräten */
-    padding: 12px 20px; /* Mehr Polsterung für bessere Klickbarkeit */
-  }
-
-  /* Intro-Content Anpassungen */
-  .intro-content {
-    flex-direction: column; /* Text und Video untereinander auf mobilen Geräten */
-    text-align: center;
-  }
-
-  .profile-video {
-    margin-right: 0;
-    margin-bottom: 20px; /* Abstand zwischen Video und Text */
-    width: 200px; /* Kleinere Video-Dimensionen */
-    height: 200px;
-  }
-
-  .text-content {
-    max-width: 90%; /* Textbereich nimmt mehr Platz auf mobilen Geräten ein */
-  }
-
-  #intro h1 {
-    font-size: 2.5em;
-  }
-
-  #intro p {
-    font-size: 1.2em;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  /* Experience Bereich Anpassungen */
-  #experience {
-    padding: 20px 10px; /* Weniger Innenabstand */
-  }
-
-  #experience h2 {
-    font-size: 1.5em; /* Überschrift weiter verkleinern */
-  }
-
-  .experience-item {
-    grid-template-columns: 1fr; /* Einspaltiges Layout */
-    padding: 15px; /* Weniger Innenabstand */
-  }
-
-  .company-logo {
-    width: 140px;
-    height: 140px; /* Logo-Größe */
-    display: block; /* Block-Element, damit Zentrierung funktioniert */
-    margin: 0 auto 10px auto; /* Zentrierung horizontal und Abstand nach unten */
-  }
-
-  .job-details {
-    display: flex; /* Flexbox für nebeneinander */
-    align-items: center; /* Vertikale Zentrierung */
-    padding-left: 1rem; /* Weniger Abstand zu Jobdetails */
-  }
-
-  .job-title {
-    font-size: 1.1em; /* Jobtitel weiter verkleinern */
-  }
-
-  .job-description ul {
-    padding-left: 10px; /* Weniger Einzug für Liste */
-    width: 100%; /* Liste soll volle Breite einnehmen */
-  }
-
-  .job-description {
-    width: 100%; /* Volle Breite */
-    padding-left: 0; /* Entfernt unnötigen Einzug */
-    margin-top: 15px; /* Abstand zwischen Jobdetails und Jobbeschreibung */
-  }
-
-  /* Skills Abschnitt Anpassungen */ /* Skills Abschnitt Anpassungen */
-  #skills {
-    padding: 30px 15px; /* Weniger Abstand auf mobilen Geräten */
-  }
-
-  #skills h2 {
-    font-size: 2em; /* Kleineren Titel auf mobilen Geräten */
-  }
-
-  .skills-container {
-    max-width: 100%;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Auf mobilen Geräten nur eine Spalte */
-    gap: 15px; /* Abstand zwischen den Karten */
-  }
-
-  .skill-card {
-    height: auto; /* Flexible Höhe auf mobilen Geräten */
-    padding: 15px; /* Weniger Innenabstand */
-  }
-
-  .skill-card h3 {
-    font-size: 1.2em; /* Kleineren Text für den Titel */
-  }
-
-  .skill-card .skill-summary {
-    font-size: 0.9em; /* Kleineren Text für die Zusammenfassung */
-  }
-
-  /* Modal Anpassungen */
-  .modal {
-    display: none; /* Flexbox für Zentrierung */
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: center; /* Vertikal zentrieren */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .modal-content {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    width: 90%; /* Breite für kleinere Bildschirme anpassen */
-    text-align: left;
-    position: relative;
-  }
-
-  .modal-content h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-  }
-
-  .modal-content p {
-    font-size: 1.2em;
-    color: #666;
-  }
-
-  .modal .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.5em;
-    color: #999;
-    cursor: pointer;
-  }
-
-  .modal .close:hover {
-    color: #333;
-  }
-
-  /* Kontaktbereich Anpassungen */
-
-  #contact {
-    display: flex;
-    flex-direction: column; /* Kinder untereinander anordnen */
-    justify-content: center; /* Zentriere den Inhalt vertikal */
-    align-items: center; /* Zentriere den Inhalt horizontal */
-    padding: 20px;
-    max-width: 96%; /* Begrenze die maximale Breite */
-    margin: 0 auto; /* Zentriere den gesamten Kontaktbereich */
-  }
-
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%; /* Flexible Breite */
-    max-width: 800px; /* Begrenzung der maximalen Breite */
-    margin: 0 auto; /* Zentriere den Container */
-    align-items: center;
-  }
-
-  .contact-info {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  form {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  form textarea {
-    min-height: 100px; /* Höheres Minimum für Textarea auf Handys */
-  }
-
-  /* Button Styling */
-  form button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  form button:hover {
-    background-color: #0056b3; /* Dunkleres Blau beim Hover */
-  }
-
-  /* CSS für das Datei-Input-Feld */
-  input[type="file"] {
-    display: none; /* Verstecke das Standard-Input */
-  }
-
-  /* Benutzerdefiniertes Button-Styling */
-  .file-upload {
-    display: inline-block;
-    background-color: #6c757d; /* Dunkles Grau */
-    color: white;
-    padding: 8px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-
-  .file-upload:hover {
-    background-color: #5a6368; /* Dunkleres Grau bei Hover */
-  }
-
-  /* Optional: Platz für zusätzliche Gestaltung */
-  small {
-    display: block;
-    color: #777;
-  }
-
-  /* Stil für Platzhaltertext */
-  input::placeholder,
-  textarea::placeholder {
-    font-size: 12px; /* Kleinere Schriftgröße */
-    color: #777; /* Graue Farbe für den Platzhalter */
-    font-style: italic; /* Optional: kursiv */
-  }
-
-  /* Stil für die kleinen Hinweise */
-  small {
-    font-size: 10px;
-    color: #777;
-  }
-
-  .impressum-container {
-    padding: 20px;
-    margin: 20px;
-  }
-
-  .impressum-container h1 {
-    font-size: 1.8em;
-  }
-
-  .impressum-container p {
-    font-size: 0.95em;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/PdJ48Ut.png" type="image/png" />
+    <link rel="apple-touch-icon" href="https://i.imgur.com/PdJ48Ut.png" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Professional CV of Andreas showcasing skills in Business Operations, Quality Management, and Process Optimization."
+    />
+    <title>ANDREAS SIADE</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header id="home" class="header">
+      <div class="logo-container">
+        <img
+          src="https://i.imgur.com/PdJ48Ut.png"
+          alt="Logo"
+          class="logo"
+          id="logo"
+        />
+        <h1 class="name" id="name">Andreas Siade</h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span>&#9776;</span>
+        <!-- Hamburger Icon -->
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#" onclick="scrollToTop()">Home</a></li>
+          <li><a href="#intro">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Startseite - Einleitung -->
+    <header id="intro">
+      <div class="intro-content">
+        <!-- Bild als Profilbild -->
+        <img
+          src="https://i.imgur.com/acr6TAZ.jpg"
+          alt="Profilbild"
+          class="profile-image"
+        />
+
+        <div class="text-content">
+          <h1>About Me</h1>
+          <p>
+            I am a results-driven professional with extensive experience in
+            Business Operations and Quality Management. My expertise lies in
+            process optimization, strategic consulting, and driving efficiency
+            improvements across diverse teams. With a strong background in
+            Finance and International Trade, I specialize in leveraging data and
+            tools like Salesforce, MS Excel, and Tableau to align business
+            strategies with operational performance. I am passionate about
+            delivering impactful solutions that drive long-term success and
+            continuous improvement.
+          </p>
+          <!-- Button zum Download des Lebenslaufs -->
+          <a
+            href="https://github.com/asiade33/andreas/raw/main/CV_Andreas_EN_2024.pdf"
+            download="CV Andreas EN 2024"
+            class="btn-download"
+          >
+            Download CV
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Berufserfahrung -->
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <ul>
+        <!-- EGYM GmbH - Business Operations Manager -->
+        <li class="experience-item">
+          <!-- Spalte 1: Logo und Firmenname -->
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/DEGkXXA.png"
+              alt="EGYM Logo"
+              class="company-logo"
+            />
+          </div>
+
+          <!-- Spalte 2: Jobposition und Zeitdauer -->
+          <div class="job-details">
+            <span class="job-title">Business Operations Manager</span>
+            <span class="company-name">EGYM GmbH</span>
+            <span class="job-duration">February 2023 – October 2024</span>
+            <span class="location">Munich, Germany</span>
+          </div>
+
+          <!-- Spalte 3: Tätigkeiten -->
+          <div class="job-description">
+            <ul>
+              <li>
+                Regular Forecasting: Generating regular forecasts of signed
+                contracts and revenue for different regions.
+              </li>
+              <li>
+                Budgeting: Planning, developing, and managing the company's
+                budget.
+              </li>
+              <li>
+                Contract Clarification: Reviewing and clarifying contract terms
+                and conditions.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- EGYM GmbH - Sales Operations Manager -->
+        <li class="experience-item">
+          <!-- Spalte 1: Logo und Firmenname -->
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/DEGkXXA.png"
+              alt="EGYM Logo"
+              class="company-logo"
+            />
+          </div>
+          <!-- Spalte 2: Jobposition und Zeitdauer -->
+          <div class="job-details">
+            <span class="job-title">Sales Operations Manager</span>
+            <span class="company-name">EGYM GmbH</span>
+
+            <span class="job-duration">February 2022 – February 2023</span>
+            <span class="location">Munich, Germany</span>
+          </div>
+          <!-- Spalte 3: Tätigkeiten -->
+          <div class="job-description">
+            <ul>
+              <li>
+                Reporting and Sales Analytics: Creating and publishing reports
+                using Tableau and Salesforce.
+              </li>
+              <li>
+                Sales and Operations Planning (S&OP): Overseeing the S&OP
+                process.
+              </li>
+              <li>
+                Variance Analysis: Conducting detailed variance analyses and
+                recommending corrective actions.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- IDnow GmbH - Director of Quality Management -->
+        <li class="experience-item">
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/44axje0.png"
+              alt="IDnow Logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="job-details">
+            <span class="job-title">Director of Quality Management</span>
+            <span class="company-name">IDnow GmbH</span>
+
+            <span class="job-duration">June 2019 – February 2023</span>
+            <span class="location">Munich, Germany</span>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                QM Policy Authorship: Developing and implementing a
+                comprehensive Quality Management (QM) policy.
+              </li>
+              <li>
+                Quality Strategy Development: Leading the development of quality
+                management strategies.
+              </li>
+              <li>
+                Quality Assurance Processes: Establishing and overseeing quality
+                assurance processes.
+              </li>
+              <li>
+                Quality Index Development: Creating and implementing a
+                comprehensive Quality Index.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- IDnow GmbH - Consultant Professional Services -->
+        <li class="experience-item">
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/44axje0.png"
+              alt="IDnow Logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="job-details">
+            <span class="job-title">Consultant Professional Services</span>
+            <span class="company-name">IDnow GmbH</span>
+
+            <span class="job-duration">June 2018 – June 2019</span>
+            <span class="location">Munich, Germany</span>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                Anti-Fraud Department: Planning and implementing the Anti-Fraud
+                Department.
+              </li>
+              <li>
+                Consulting on Quality, Security, and Product: Advising clients
+                and internal employees.
+              </li>
+              <li>
+                Monitoring and Continuous Improvement: Overseeing and improving
+                company processes.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- IDnow GmbH - Operations Manager -->
+        <li class="experience-item">
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/44axje0.png"
+              alt="IDnow Logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="job-details">
+            <span class="job-title">Operations Manager</span>
+            <span class="company-name">IDnow GmbH</span>
+
+            <span class="job-duration">April 2017 – June 2018</span>
+            <span class="location">Munich, Germany</span>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                Workforce Management: Scheduling shifts for diverse teams across
+                multiple locations.
+              </li>
+              <li>
+                Forecasting: Developing and analyzing workforce forecasts.
+              </li>
+              <li>
+                Process Optimization: Identifying and implementing process
+                improvements.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- IDnow GmbH - Team Lead Operations -->
+        <li class="experience-item">
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/44axje0.png"
+              alt="IDnow Logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="job-details">
+            <span class="job-title">Team Lead Operations</span>
+            <span class="company-name">IDnow GmbH</span>
+
+            <span class="job-duration">August 2014 – April 2017</span>
+            <span class="location">Munich, Germany</span>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                Team Leadership: Leading and managing up to 100 call center
+                agents.
+              </li>
+              <li>
+                Training and Development: Designing and conducting training
+                sessions.
+              </li>
+              <li>
+                Performance Management: Monitoring team performance and
+                providing feedback.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Internet Online Media - Sales Representative -->
+        <li class="experience-item">
+          <div class="logo-container">
+            <img
+              src="https://i.imgur.com/zKZoFK9.png"
+              alt="IOM Logo"
+              class="company-logo"
+            />
+          </div>
+          <div class="job-details">
+            <span class="job-title">Sales Representative</span>
+            <span class="company-name">Internet Online Media</span>
+
+            <span class="job-duration">July 2013 – July 2014</span>
+            <span class="location">Ismaning, Germany</span>
+          </div>
+          <div class="job-description">
+            <ul>
+              <li>
+                Sales and Business Development: Prospecting and acquiring new
+                clients.
+              </li>
+              <li>
+                Product Presentation: Conducting product presentations to
+                decision makers.
+              </li>
+              <li>
+                Offer and Negotiation: Handling offer development and
+                successfully closing deals.
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Fähigkeiten & Zertifikate -->
+    <section id="skills">
+      <div class="skills-container">
+        <h2>Skills & Certifications</h2>
+        <div class="skills-grid">
+          <!-- Salesforce -->
+          <div class="skill-card" data-skill="salesforce">
+            <img
+              src="https://i.imgur.com/AnnMcRp.png"
+              alt="Salesforce Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Salesforce</h3>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
+
+          <!-- Excel -->
+          <div class="skill-card" data-skill="excel">
+            <img
+              src="https://i.imgur.com/1275CCE.png"
+              alt="MS Excel Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>MS Excel</h3>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
+
+          <!-- Project Management (PRINCE2) -->
+          <div class="skill-card" data-skill="prince2">
+            <img
+              src="https://i.imgur.com/30HTmEs.png"
+              alt="PRINCE2 Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Project Management (PRINCE2)</h3>
+              <p class="skill-summary">
+                <a
+                  href="https://github.com/asiade33/andreas/raw/main/prince2%20certificate.pdf"
+                  download="PRINCE2_Certificate.pdf"
+                  title="Download PRINCE2 Certificate"
+                >
+                  Click to download certificate
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- QMR -->
+          <div class="skill-card" data-skill="qmr">
+            <img
+              src="https://i.imgur.com/gMwdfjt.png"
+              alt="QMR Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Quality Management Representative (QMR)</h3>
+              <p class="skill-summary">
+                <a
+                  href="https://github.com/asiade33/andreas/raw/main/Zertifikat_QMB_Siade.pdf"
+                  download="QMR_Certificate.pdf"
+                  title="Download Quality Management Representative Certificate"
+                >
+                  Click to download certificate
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Finance & International Trade -->
+          <div class="skill-card" data-skill="finance-trade">
+            <img
+              src="https://i.imgur.com/RJ2q8J1.png"
+              alt="Finance Icon"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Finance & International Trade</h3>
+              <p class="skill-summary">
+                <a
+                  href="https://github.com/asiade33/andreas/raw/main/Finance%20%26%20International%20Trade.pdf"
+                  download="Finance_International_Trade_Certificate.pdf"
+                  title="Download Finance & International Trade Certificate"
+                >
+                  Click to download certificate
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal: Skill Details -->
+    <div id="skill-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <!-- Salesforce-Modal -->
+        <div class="modal-details" id="salesforce-details">
+          <h3>Salesforce</h3>
+          <p>
+            Expertise in Salesforce CRM for business operations and analytics. I
+            have extensive experience using Salesforce to manage and optimize
+            sales processes.
+          </p>
+          <p>
+            Primarily, I have utilized Salesforce for all sales activities,
+            including tracking leads, opportunities, and customer interactions.
+          </p>
+          <p>
+            Additionally, I have created a variety of reports and dashboards to
+            monitor performance, identify trends, and drive data-driven
+            decision-making for continuous process optimization.
+          </p>
+        </div>
+
+        <!-- Excel-Modal -->
+        <div class="modal-details" id="excel-details">
+          <h3>MS Excel & Google Sheets</h3>
+          <p>
+            Advanced proficiency in MS Excel and Google Sheets, focusing on data
+            analysis, pivot tables, and complex formulas. I have extensive
+            experience in using both platforms to create detailed reports and
+            analyze trends.
+          </p>
+          <p>
+            I am particularly skilled in building interactive dashboards and
+            visualizing data to improve decision-making processes.
+          </p>
+          <p>
+            While I am proficient in MS Excel, I am equally, if not more, adept
+            in Google Sheets. Its real-time collaboration and flexibility for
+            team-based projects make it an ideal tool for efficient data sharing
+            and analysis.
+          </p>
+        </div>
+
+        <!-- PRINCE2-Modal -->
+        <div class="modal-details" id="prince2-details">
+          <h3>PRINCE2® Foundation Certificate</h3>
+          <p><strong>Issued to:</strong> Andreas Siade</p>
+          <p><strong>Issued by:</strong> PeopleCert / AXELOS</p>
+          <p><strong>Effective Date:</strong> 02 November 2020</p>
+        </div>
+        <!-- QMR-Modal -->
+        <div class="modal-details" id="qmr-details">
+          <h3>Quality Management Representative</h3>
+          <p>
+            Andreas Siade successfully passed the examination for the Quality
+            Management Representative DIN EN ISO 9001:2015 certificate on
+            November 4, 2020, at the Virtual Academy, according to DEKRA
+            Akademie GmbH guidelines. He is proficient in implementing,
+            ensuring, and maintaining a quality management system in compliance
+            with DIN EN ISO 9001:2015.
+          </p>
+          <p><strong>Issued to:</strong> Andreas Siade</p>
+          <p><strong>Issued by:</strong> DEKRA Akademie GmbH</p>
+          <p><strong>Effective Date:</strong> 04 November 2020</p>
+          <p>
+            <strong>Comments:</strong> Demonstrated comprehensive knowledge of
+            quality management system implementation across organizations.
+          </p>
+        </div>
+        <!-- ECBM-Modal -->
+        <div class="modal-details" id="finance-trade-details">
+          <h3>Finance & International Trade</h3>
+          <p>
+            <strong>Institution:</strong> German-British Chamber of Industry &
+            Commerce
+          </p>
+          <p>
+            <strong>Course Provider:</strong> European College of Business &
+            Management, London
+          </p>
+          <p><strong>Duration:</strong> 04/03/2012 to 24/03/2012</p>
+          <p><strong>Participant:</strong> Andreas Siade</p>
+          <h4>Course Highlights:</h4>
+          <ul>
+            <li>British Business Administration & Culture</li>
+            <li>Marketing, Advertising, and Brands</li>
+            <li>Modern British Economy, Tax, and Banking</li>
+            <li>Introduction to English Law</li>
+            <li>City of London Financial Institutions</li>
+            <li>The London Metal Exchange</li>
+          </ul>
+          <p><strong>Assessment:</strong> Merit</p>
+          <p>
+            <strong>Comments:</strong> Demonstrated good command of English and
+            delivered an interesting project.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p>Details of significant projects and accomplishments.</p>
+        <div class="projects">
+          <!-- Project 1: Business Operations Manager -->
+          <div class="project-card" data-project="1">
+            <img
+              src="https://i.imgur.com/V9UHY9Y.png"
+              alt="Business Operations Manager"
+            />
+            <div class="content">
+              <h3>Business Operations Manager (EGYM)</h3>
+              <p>
+                Improved forecasting and budget planning efficiency, optimized
+                S&OP Process.
+              </p>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
+
+          <!-- Modal for Project 1 -->
+          <div id="project-modal-1" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h3>Business Operations Manager (EGYM)</h3>
+              <p>
+                <strong
+                  >Efficiency Improvement in Forecasting and Budget
+                  Planning:</strong
+                ><br />
+                Regularly generated precise forecasts that significantly
+                improved revenue planning accuracy and also enhanced the
+                accuracy of forecasts for signed contracts and machine
+                production needs.
+              </p>
+              <p>
+                <strong>Key Achievement:</strong> Implemented an enhanced
+                forecasting system that improved accuracy across all areas by
+                20%, including revenue, signed contracts, and machine production
+                forecasts. This led to a 15% reduction in forecast errors and
+                reduced planning time by 20%.
+              </p>
+              <p>
+                <strong>S&OP Process Optimization:</strong><br />
+                Completely redesigned the Sales and Operations Planning (S&OP)
+                process, ensuring seamless integration of KPIs and proactive
+                warning signals.
+              </p>
+              <p>
+                <strong>Key Achievement:</strong> Leveraged Tableau to make all
+                relevant KPIs, forecasts, and alerts universally accessible to
+                employees, improving cross-departmental alignment by 25%,
+                reducing planning errors by 30%, and increasing operational
+                efficiency by 20%.
+              </p>
+              <p>
+                <strong>Sales Target Tracking for Sales Team:</strong><br />
+                Implemented a dynamic Tableau dashboard that allowed the sales
+                team and their manager to track real-time progress against sales
+                targets, enabling proactive measures based on current
+                performance.
+              </p>
+              <p>
+                <strong>Key Achievement:</strong> The dashboard became a crucial
+                tool for identifying performance gaps and opportunities, helping
+                the sales team refine their strategies and improve target
+                achievement rates.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2: Director of Quality Management -->
+          <div class="project-card" data-project="2">
+            <img
+              src="https://i.imgur.com/Zzg9qxJ.png"
+              alt="Director of Quality Management"
+            />
+            <div class="content">
+              <h3>Director of Quality Management (IDnow)</h3>
+              <p>
+                Developed a comprehensive quality management strategy,
+                implemented a fraud & quality index and escalation processes to
+                improve transparency and customer satisfaction.
+              </p>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
+
+          <!-- Modal for Project 2 -->
+          <div id="project-modal-2" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h3>Director of Quality Management (IDnow)</h3>
+              <p>
+                <strong
+                  >Optimization of a Comprehensive Quality Management Strategy
+                  and Policy:</strong
+                ><br />
+                Elevated quality assurance to a new level by implementing a
+                quality management policy that significantly increased the
+                company standard and reduced the error rate in internal
+                processes by 25%.<br />
+                <strong>Key Achievement:</strong> Created and executed a robust
+                quality management framework, reducing customer complaints by
+                30% within the first year.<br /><br />
+
+                <strong
+                  >Creation & Implementation of a Fraud & Quality Index:</strong
+                ><br />
+                Developed a fraud & quality index that enabled the company to
+                transparently track key quality metrics, increasing customer
+                satisfaction scores by 20%.<br />
+                <strong>Key Achievement:</strong> The fraud & quality index
+                helped to better detect fraud attempts and streamlined
+                escalation processes, improving response times and resolution
+                efficiency. The index fostered a customer-focused approach,
+                improving overall process efficiency.<br /><br />
+
+                <strong>Development of Anti-Fraud Strategy:</strong><br />
+                Developed and implemented a dedicated Anti-Fraud department that
+                streamlined fraud detection and prevention processes.<br />
+                <strong>Key Achievement:</strong> Reduced fraud rates by 40%,
+                resulting in significant cost savings and enhanced security for
+                the company and its clients.<br /><br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+
+      <!-- Kontakt-Icons und Links -->
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span
+              ><a href="mailto:contact@andreas-sia.de"
+                >contact@andreas-sia.de</a
+              ></span
+            >
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>München</span>
+          </div>
+          <div class="contact-item">
+            <a
+              href="https://de.linkedin.com/in/andreas-siade-a15649121"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+          <div class="contact-item">
+            <a
+              href="https://www.xing.com/profile/Andreas_Siade"
+              target="_blank"
+            >
+              <i class="fab fa-xing"></i> Xing
+            </a>
+          </div>
+        </div>
+
+        <!-- Kontaktformular -->
+        <form
+          action="https://formsubmit.co/siade@gmx.de"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Name-Feld -->
+          <label for="sendername"
+            >Name: <span style="color: red">*</span></label
+          >
+          <input
+            type="text"
+            id="sendername"
+            name="name"
+            required
+            placeholder="Please enter your name"
+          />
+
+          <!-- Email-Feld -->
+          <label for="email">Email: <span style="color: red">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Please enter your email address for a response"
+          />
+
+          <!-- Betreff-Feld -->
+          <label for="subject"
+            >Subject: <span style="color: red">*</span></label
+          >
+          <input
+            type="text"
+            id="subject"
+            name="_subject"
+            required
+            placeholder="Please enter the subject of your message"
+          />
+
+          <!-- Message-Feld -->
+          <label for="message"
+            >Message: <span style="color: red">*</span></label
+          >
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Write your message here"
+          ></textarea>
+
+          <!-- CC-Adresse -->
+          <label for="cc">CC:</label>
+          <input
+            type="email"
+            id="cc"
+            name="_cc"
+            placeholder="Enter an email address if you'd like to send a copy of the message to someone else"
+          />
+
+          <!-- Dateianhang (nicht required) -->
+          <label for="attachment" class="file-upload">Attachment:</label>
+          <input
+            type="file"
+            id="attachment"
+            name="attachment"
+            accept=".jpg, .jpeg, .png, .pdf, .docx"
+          />
+          <small>
+            max 10 MB; allowed file types: .jpg, .jpeg, .png, .pdf, .docx
+          </small>
+
+          <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
+          <div
+            id="file-confirmation"
+            style="display: none; color: green; margin-top: 10px"
+          >
+            File attached successfully!
+          </div>
+
+          <!-- Verstecktes Feld für benutzerdefinierte Weiterleitungsseite -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://andreas-sia.de/thank-you.html"
+          />
+
+          <!-- Extra Abstand vor dem Button -->
+          <div style="margin-bottom: 20px"></div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Bereich -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Andreas Siade.</p>
+        <p>
+          <a href="/impressum" title="Impressum" class="footer-impressum"
+            >Impressum</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- Dein JavaScript -->
+    <script src="scripts.js"></script>
+  </body>
+</html>
