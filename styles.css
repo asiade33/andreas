@@ -1186,6 +1186,10 @@ small {
     min-height: 100px; /* Höheres Minimum für Textarea auf Handys */
   }
 
+    #cc::placeholder {
+    content: "Enter email for a copy"; /* Verkürzte Version */
+  }
+
   /* Button Styling */
   form button {
     background-color: #007bff;
