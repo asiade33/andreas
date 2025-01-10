@@ -1,3 +1,4 @@
+// Funktion zum Scrollen nach oben
 function scrollToTop() {
   // Scrollt zum oberen Rand der Seite
   window.scrollTo({
@@ -17,10 +18,20 @@ window.onscroll = function () {
   }
 };
 
-// Funktion zum Scrollen nach oben
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" }); // "smooth" sorgt für den sanften Übergang
-}
+// Prüfung der Dateigröße
+document.querySelector("form").addEventListener("submit", function (event) {
+  const fileInput = document.getElementById("attachment");
+  const file = fileInput.files[0];
+
+  // Überprüfen, ob eine Datei ausgewählt wurde
+  if (file && file.size > 10 * 1024 * 1024) {
+    // 10 MB in Bytes
+    alert(
+      "Die Datei ist zu groß. Bitte wählen Sie eine Datei, die kleiner als 10 MB ist."
+    );
+    event.preventDefault(); // Formular nicht absenden
+  }
+});
 
 // Event Listener für das Klicken auf das Logo und den Namen
 const logo = document.getElementById("logo");
