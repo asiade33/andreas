@@ -531,6 +531,12 @@ h3 {
   color: #2a75b4; /* Eine dezente Farbe für Hervorhebungen */
 }
 
+.modal-details ul {
+  margin-left: 20px; /* Abstand vom linken Rand */
+  padding-left: 20px; /* Optional: zusätzlicher Innenabstand */
+  list-style-position: outside; /* Bullet Points außerhalb des Inhalts */
+}
+
 /* Schließen-Button */
 .modal .close {
   position: absolute;
