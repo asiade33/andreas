@@ -802,6 +802,36 @@ form button:hover {
   background-color: #0056b3; /* Dunkleres Blau beim Hover */
 }
 
+/* CSS für das Datei-Input-Feld */
+input[type="file"] {
+  display: none; /* Verstecke das Standard-Input */
+}
+
+/* Benutzerdefiniertes Button-Styling */
+.file-upload {
+  display: inline-block;
+  background-color: #6c757d; /* Dunkles Grau */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  display: none; /* Verstecke das Standard-Datei-Input */
+}
+
+.file-upload:hover {
+  background-color: #5a6368; /* Dunkleres Grau bei Hover */
+}
+
+/* Optional: Platz für zusätzliche Gestaltung */
+small {
+  display: block;
+  color: #777;
+}
+
 /* Media Queries für Bildschirmgrößen bis max. 768px */
 @media screen and (max-width: 768px) {
   /* Header Anpassungen */
