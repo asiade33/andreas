@@ -525,21 +525,21 @@
         </div>
 
 <!-- Kontaktformular -->
-<form action="https://formspree.io/f/xzzzkwgp" method="POST" enctype="multipart/form-data">
+<form action="https://formsubmit.co/siade@gmx.de" method="POST" enctype="multipart/form-data">
   <label for="sendername">Name:</label>
   <input type="text" id="sendername" name="name" required />
-  
+
   <label for="email">Email:</label>
   <input type="email" id="email" name="email" required />
-  
+
   <label for="message">Message:</label>
   <textarea id="message" name="message" required></textarea>
-  
+
   <!-- Dateianhang -->
   <label for="attachment" class="file-upload">Attachment</label>
   
-  <!-- Datei-Input (Das Standard-Label wird nicht angezeigt) -->
-  <input type="file" id="attachment" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .docx" />
+  <!-- Datei-Input -->
+  <input type="file" id="attachment" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .docx" required />
   
   <small>max 10 mb</small>
   <small>allowed file types: .jpg, .jpeg, .png, .pdf, .docx</small>
@@ -549,8 +549,6 @@
 
   <button type="submit">Send Message</button>
 </form>
-
-
 
        
       </div>
