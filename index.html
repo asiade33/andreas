@@ -712,7 +712,9 @@
           enctype="multipart/form-data"
         >
           <!-- Name-Feld -->
-          <label for="sendername">Name:</label>
+          <label for="sendername"
+            >Name: <span style="color: red">*</span></label
+          >
           <input
             type="text"
             id="sendername"
@@ -722,17 +724,19 @@
           />
 
           <!-- Email-Feld -->
-          <label for="email">Email:</label>
+          <label for="email">Email: <span style="color: red">*</span></label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            placeholder="Please enter your  email address for a response"
+            placeholder="Please enter your email address for a response"
           />
 
           <!-- Betreff-Feld -->
-          <label for="subject">Subject:</label>
+          <label for="subject"
+            >Subject: <span style="color: red">*</span></label
+          >
           <input
             type="text"
             id="subject"
@@ -742,7 +746,9 @@
           />
 
           <!-- Message-Feld -->
-          <label for="message">Message:</label>
+          <label for="message"
+            >Message: <span style="color: red">*</span></label
+          >
           <textarea
             id="message"
             name="message"
@@ -751,7 +757,7 @@
           ></textarea>
 
           <!-- CC-Adresse -->
-          <label for="cc">CC (optional):</label>
+          <label for="cc">CC:</label>
           <input
             type="email"
             id="cc"
@@ -759,19 +765,17 @@
             placeholder="Enter an email address if you'd like to send a copy of the message to someone else"
           />
 
-          <!-- Dateianhang -->
-          <label for="attachment" class="file-upload">Attachment</label>
+          <!-- Dateianhang (nicht required) -->
+          <label for="attachment" class="file-upload">Attachment:</label>
           <input
             type="file"
             id="attachment"
             name="attachment"
             accept=".jpg, .jpeg, .png, .pdf, .docx"
-            required
           />
-          <small
-            >max 10 MB; allowed file types: .jpg, .jpeg, .png, .pdf,
-            .docx</small
-          >
+          <small>
+            max 10 MB; allowed file types: .jpg, .jpeg, .png, .pdf, .docx
+          </small>
 
           <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
           <div
