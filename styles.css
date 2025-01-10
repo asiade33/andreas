@@ -818,10 +818,6 @@ input[type="file"] {
   margin-top: 10px;
 }
 
-input[type="file"] {
-  display: none; /* Verstecke das Standard-Datei-Input */
-}
-
 .file-upload:hover {
   background-color: #5a6368; /* Dunkleres Grau bei Hover */
 }
