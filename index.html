@@ -525,28 +525,40 @@
         </div>
 
 <!-- Kontaktformular -->
-<form action="https://formsubmit.co/cd3e4eb8b43bce3a0d4665367f2fb1e4" method="POST" enctype="multipart/form-data">
+<form action="https://formsubmit.co/siade@gmx.de" method="POST" enctype="multipart/form-data">
+
+  <!-- Name-Feld -->
   <label for="sendername">Name:</label>
-  <input type="text" id="sendername" name="name" required />
+  <input type="text" id="sendername" name="name" required placeholder="Please enter your name" />
 
+  <!-- Email-Feld -->
   <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required />
+  <input type="email" id="email" name="email" required placeholder="Please enter your  email address for a response" />
 
+  <!-- Betreff-Feld -->
+  <label for="subject">Subject:</label>
+  <input type="text" id="subject" name="_subject" required placeholder="Please enter the subject of your message" />
+
+  <!-- Message-Feld -->
   <label for="message">Message:</label>
-  <textarea id="message" name="message" required></textarea>
+  <textarea id="message" name="message" required placeholder="Write your message here"></textarea>
+
+  <!-- CC-Adresse -->
+  <label for="cc">CC (optional):</label>
+  <input type="email" id="cc" name="_cc" placeholder="Enter an email address if you'd like to send a copy of the message to someone else" />
 
   <!-- Dateianhang -->
   <label for="attachment" class="file-upload">Attachment</label>
-  
-  <!-- Datei-Input -->
-<input type="file" id="attachment" name="attachment[]" accept=".jpg, .jpeg, .png, .pdf, .docx" multiple />
-  <small>max 10 mb</small>
-  <small>allowed file types: .jpg, .jpeg, .png, .pdf, .docx</small>
+  <input type="file" id="attachment" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .docx" required />  
+  <small>max 10 MB; allowed file types: .jpg, .jpeg, .png, .pdf, .docx</small>
 
-    <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
-    <div id="file-confirmation" style="display: none; color: green; margin-top: 10px;">
-      File attached successfully!
-    </div>
+  <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
+  <div id="file-confirmation" style="display: none; color: green; margin-top: 10px;">
+    File attached successfully!
+  </div>
+
+  <!-- Verstecktes Feld für benutzerdefinierte Weiterleitungsseite -->
+  <input type="hidden" name="_next" value="https://andreas-sia.de/thank-you.html">
 
   <!-- Extra Abstand vor dem Button -->
   <div style="margin-bottom: 20px;"></div>
@@ -554,10 +566,6 @@
   <button type="submit">Send Message</button>
 </form>
 
-
-
-
-       
       </div>
     </section>
 
