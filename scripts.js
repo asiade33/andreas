@@ -133,7 +133,6 @@ window.addEventListener("click", function (event) {
 });
 
 // Selektiere alle Skill Cards und das Modal
-
 const skillCards = document.querySelectorAll(".skill-card");
 const skillModal = document.getElementById("skill-modal");
 const closeSkillModal = document.querySelector(".close");
@@ -168,3 +167,28 @@ window.addEventListener("click", (event) => {
     skillModal.style.display = "none";
   }
 });
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && skillModal.style.display === "block") {
+    skillModal.style.display = "none";
+  }
+});
+
+// Funktion zum Ändern des Platzhaltertexts je nach Bildschirmgröße
+function adjustPlaceholder() {
+  var ccInput = document.getElementById("cc");
+  if (window.innerWidth <= 768) {
+    ccInput.setAttribute("placeholder", "Enter email for a copy"); // Kurzfassung für mobile Geräte
+  } else {
+    ccInput.setAttribute(
+      "placeholder",
+      "Enter an email address if you'd like to send a copy of the message to someone else"
+    ); // Standard-Text für größere Bildschirme
+  }
+}
+
+// Event-Listener, um die Funktion bei einer Größenänderung des Fensters zu triggern
+window.addEventListener("resize", adjustPlaceholder);
+
+// Initiale Ausführung, um den Platzhalter beim Laden der Seite anzupassen
+adjustPlaceholder();
