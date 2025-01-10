@@ -178,7 +178,7 @@ window.addEventListener("keydown", (event) => {
 function adjustPlaceholder() {
   var ccInput = document.getElementById("cc");
   if (window.innerWidth <= 768) {
-    ccInput.setAttribute("placeholder", "Enter email for a copy"); // Kurzfassung für mobile Geräte
+    ccInput.setAttribute("placeholder", "Enter an email for a copy"); // Kurzfassung für mobile Geräte
   } else {
     ccInput.setAttribute(
       "placeholder",
