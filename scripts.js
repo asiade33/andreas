@@ -1,3 +1,11 @@
+function scrollToTop() {
+  // Scrollt zum oberen Rand der Seite
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Optional: Fügt einen sanften Scroll-Effekt hinzu
+  });
+}
+
 // Funktion, die die Klasse "scrolled" hinzufügt, wenn nach unten gescrollt wird
 window.onscroll = function () {
   let navbar = document.querySelector("nav");
