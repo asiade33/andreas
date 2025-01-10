@@ -888,6 +888,56 @@ small {
   line-height: 1.5; /* Erhöhte Zeilenhöhe für bessere Lesbarkeit */
 }
 
+/* Container für das Impressum */
+.impressum-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.impressum-container h1 {
+  font-size: 2em;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Text Styling */
+.impressum-container p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Stronger Text (e.g. Section Headers) */
+.impressum-container strong {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Styling für Links */
+.impressum-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.impressum-container a:hover {
+  text-decoration: underline;
+}
+
+/* Stil für das Impressum im Footer - kleinere Schrift */
+.footer-impressum {
+  font-size: 0.8em; /* Kleinere Schriftgröße */
+  color: whitesmoke; /* Standardfarbe für den Text */
+  text-decoration: none; /* Keine Unterstreichung */
+}
+
 /* Media Queries für Bildschirmgrößen bis max. 768px */
 @media screen and (max-width: 768px) {
   /* Header Anpassungen */
@@ -1130,58 +1180,72 @@ small {
     min-height: 100px; /* Höheres Minimum für Textarea auf Handys */
   }
 
-/* Button Styling */
-form button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  /* Button Styling */
+  form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-form button:hover {
-  background-color: #0056b3; /* Dunkleres Blau beim Hover */
-}
+  form button:hover {
+    background-color: #0056b3; /* Dunkleres Blau beim Hover */
+  }
 
-/* CSS für das Datei-Input-Feld */
-input[type="file"] {
-  display: none; /* Verstecke das Standard-Input */
-}
+  /* CSS für das Datei-Input-Feld */
+  input[type="file"] {
+    display: none; /* Verstecke das Standard-Input */
+  }
 
-/* Benutzerdefiniertes Button-Styling */
-.file-upload {
-  display: inline-block;
-  background-color: #6c757d; /* Dunkles Grau */
-  color: white;
-  padding: 8px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+  /* Benutzerdefiniertes Button-Styling */
+  .file-upload {
+    display: inline-block;
+    background-color: #6c757d; /* Dunkles Grau */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 
-.file-upload:hover {
-  background-color: #5a6368; /* Dunkleres Grau bei Hover */
-}
+  .file-upload:hover {
+    background-color: #5a6368; /* Dunkleres Grau bei Hover */
+  }
 
-/* Optional: Platz für zusätzliche Gestaltung */
-small {
-  display: block;
-  color: #777;
-}
+  /* Optional: Platz für zusätzliche Gestaltung */
+  small {
+    display: block;
+    color: #777;
+  }
 
-/* Stil für Platzhaltertext */
-input::placeholder,
-textarea::placeholder {
-  font-size: 12px; /* Kleinere Schriftgröße */
-  color: #777; /* Graue Farbe für den Platzhalter */
-  font-style: italic; /* Optional: kursiv */
-}
+  /* Stil für Platzhaltertext */
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px; /* Kleinere Schriftgröße */
+    color: #777; /* Graue Farbe für den Platzhalter */
+    font-style: italic; /* Optional: kursiv */
+  }
 
-/* Stil für die kleinen Hinweise */
-small {
-  font-size: 10px;
-  color: #777;
+  /* Stil für die kleinen Hinweise */
+  small {
+    font-size: 10px;
+    color: #777;
+  }
+
+  .impressum-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .impressum-container h1 {
+    font-size: 1.8em;
+  }
+
+  .impressum-container p {
+    font-size: 0.95em;
+  }
 }
