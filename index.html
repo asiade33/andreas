@@ -21,7 +21,7 @@
       content="Professional CV of Andreas showcasing skills in Business Operations, Quality Management, and Process Optimization."
     />
     <title>ANDREAS SIADE</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <header id="home" class="header">
@@ -73,13 +73,12 @@
           </p>
           <!-- Button zum Download des Lebenslaufs -->
           <a
-  href="https://asiade33.github.io/andreas/CV_Andreas_EN_2024.pdf"
-  download="CV Andreas EN 2024"
-  class="btn-download"
->
-  Download CV
-</a>
-
+            href="https://asiade33.github.io/andreas/CV_Andreas_EN_2024.pdf"
+            download="CV Andreas EN 2024"
+            class="btn-download"
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </header>
@@ -338,44 +337,102 @@
       </ul>
     </section>
 
-<!-- Fähigkeiten & Zertifikate -->
-<section id="skills">
-  <div class="skills-container">
-    <h2>Skills & Certifications</h2>
-    <div class="skills-grid">
-      <div class="skill-card" data-skill="salesforce">
-        <img src="https://i.imgur.com/AnnMcRp.png" alt="Salesforce Logo" class="skill-logo">
-        <div class="text-wrapper">
-          <h3>Salesforce</h3>
-          <p class="skill-summary">Click for details</p>
-        </div>
-      </div>
-      <div class="skill-card" data-skill="excel">
-        <img src="https://i.imgur.com/1275CCE.png" alt="MS Excel Logo" class="skill-logo">
-        <div class="text-wrapper">
-          <h3>MS Excel</h3>
-          <p class="skill-summary">Click for details</p>
-        </div>
-      </div>
-      <div class="skill-card" data-skill="prince2">
-        <img src="https://i.imgur.com/30HTmEs.png" alt="PRINCE2 Logo" class="skill-logo">
-        <div class="text-wrapper">
-          <h3>Project Management (PRINCE2)</h3>
-          <p class="skill-summary">Click for details</p>
-        </div>
-      </div>
-      <div class="skill-card" data-skill="qmr">
-        <img src="https://i.imgur.com/gMwdfjt.png" alt="QMR Logo" class="skill-logo">
-        <div class="text-wrapper">
-          <h3>Quality Management Representative (QMR)</h3>
-          <p class="skill-summary">Click for details</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Fähigkeiten & Zertifikate -->
+    <section id="skills">
+      <div class="skills-container">
+        <h2>Skills & Certifications</h2>
+        <div class="skills-grid">
+          <!-- Salesforce -->
+          <div class="skill-card" data-skill="salesforce">
+            <img
+              src="https://i.imgur.com/AnnMcRp.png"
+              alt="Salesforce Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Salesforce</h3>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
 
+          <!-- Excel -->
+          <div class="skill-card" data-skill="excel">
+            <img
+              src="https://i.imgur.com/1275CCE.png"
+              alt="MS Excel Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>MS Excel</h3>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
 
+          <!-- Project Management (PRINCE2) -->
+          <div class="skill-card" data-skill="prince2">
+            <img
+              src="https://i.imgur.com/30HTmEs.png"
+              alt="PRINCE2 Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Project Management (PRINCE2)</h3>
+              <p class="skill-summary">
+                <a
+                  href="https://github.com/asiade33/andreas/raw/main/prince2%20certificate.pdf"
+                  download="PRINCE2_Certificate.pdf"
+                  title="Download PRINCE2 Certificate"
+                >
+                  Click to download certificate
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- QMR -->
+          <div class="skill-card" data-skill="qmr">
+            <img
+              src="https://i.imgur.com/gMwdfjt.png"
+              alt="QMR Logo"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Quality Management Representative (QMR)</h3>
+              <p class="skill-summary">
+                <a
+                  href="https://github.com/asiade33/andreas/raw/main/Zertifikat_QMB_Siade.pdf"
+                  download="QMR_Certificate.pdf"
+                  title="Download Quality Management Representative Certificate"
+                >
+                  Click to download certificate
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Finance & International Trade -->
+          <div class="skill-card" data-skill="finance-trade">
+            <img
+              src="https://i.imgur.com/RJ2q8J1.png"
+              alt="Finance Icon"
+              class="skill-logo"
+            />
+            <div class="text-wrapper">
+              <h3>Finance & International Trade</h3>
+              <p class="skill-summary">
+                <a
+                  href="https://github.com/asiade33/andreas/raw/main/Finance%20%26%20International%20Trade.pdf"
+                  download="Finance_International_Trade_Certificate.pdf"
+                  title="Download Finance & International Trade Certificate"
+                >
+                  Click to download certificate
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Modal: Skill Details -->
     <div id="skill-modal" class="modal">
@@ -384,113 +441,203 @@
         <!-- Default title and description will be hidden -->
         <div class="modal-details" id="salesforce-details">
           <h3>Salesforce</h3>
-          <p>Expertise in Salesforce CRM for business operations and analytics.</p>
+          <p>
+            Expertise in Salesforce CRM for business operations and analytics.
+          </p>
         </div>
         <div class="modal-details" id="excel-details">
           <h3>MS Excel</h3>
-          <p>Advanced proficiency in Excel, including data analysis, pivot tables, and macros.</p>
+          <p>
+            Advanced proficiency in Excel, including data analysis, pivot
+            tables, and macros.
+          </p>
         </div>
         <div class="modal-details" id="prince2-details">
-          <h3>Project Management (PRINCE2)</h3>
-          <p>Certified project manager with expertise in the PRINCE2 methodology.</p>
+          <h3>PRINCE2® Foundation Certificate</h3>
+          <p><strong>Issued to:</strong> Andreas Siade</p>
+          <p><strong>Issued by:</strong> PeopleCert / AXELOS</p>
+          <p><strong>Effective Date:</strong> 02 November 2020</p>
         </div>
         <div class="modal-details" id="qmr-details">
-          <h3>Quality Management Representative (QMR)</h3>
-          <p>Certified QMR with extensive experience in quality assurance and process optimization.</p>
+          <h3>Quality Management Representative</h3>
+          <p>
+            Andreas Siade successfully passed the examination for the Quality
+            Management Representative DIN EN ISO 9001:2015 certificate on
+            November 4, 2020, at the Virtual Academy, according to DEKRA
+            Akademie GmbH guidelines. He is proficient in implementing,
+            ensuring, and maintaining a quality management system in compliance
+            with DIN EN ISO 9001:2015.
+          </p>
+          <p><strong>Issued to:</strong> Andreas Siade</p>
+          <p><strong>Issued by:</strong> DEKRA Akademie GmbH</p>
+          <p><strong>Effective Date:</strong> 04 November 2020</p>
+          <p>
+            <strong>Comments:</strong> Demonstrated comprehensive knowledge of
+            quality management system implementation across organizations.
+          </p>
+        </div>
+        <div class="modal-details" id="finance-trade-details">
+          <h3>Finance & International Trade</h3>
+          <p>
+            <strong>Institution:</strong> German-British Chamber of Industry &
+            Commerce
+          </p>
+          <p>
+            <strong>Course Provider:</strong> European College of Business &
+            Management, London
+          </p>
+          <p><strong>Duration:</strong> 04/03/2012 to 24/03/2012</p>
+          <p><strong>Participant:</strong> Andreas Siade</p>
+          <h4>Course Highlights:</h4>
+          <ul>
+            <li>British Business Administration & Culture</li>
+            <li>Marketing, Advertising, and Brands</li>
+            <li>Modern British Economy, Tax, and Banking</li>
+            <li>Introduction to English Law</li>
+            <li>City of London Financial Institutions</li>
+            <li>The London Metal Exchange</li>
+          </ul>
+          <p><strong>Assessment:</strong> Merit</p>
+          <p>
+            <strong>Comments:</strong> Demonstrated good command of English and
+            delivered an interesting project.
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p>Details of significant projects and accomplishments.</p>
+        <div class="projects">
+          <!-- Project 1: Business Operations Manager -->
+          <div class="project-card" data-project="1">
+            <img
+              src="https://i.imgur.com/V9UHY9Y.png"
+              alt="Business Operations Manager"
+            />
+            <div class="content">
+              <h3>Business Operations Manager (EGYM)</h3>
+              <p>
+                Improved forecasting and budget planning efficiency, optimized
+                S&OP Process.
+              </p>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="container">
-    <h2>Portfolio</h2>
-    <p>Details of significant projects and accomplishments.</p>
-    <div class="projects">
+          <!-- Modal for Project 1 -->
+          <div id="project-modal-1" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h3>Business Operations Manager (EGYM)</h3>
+              <p>
+                <strong
+                  >Efficiency Improvement in Forecasting and Budget
+                  Planning:</strong
+                ><br />
+                Regularly generated precise forecasts that significantly
+                improved revenue planning accuracy and also enhanced the
+                accuracy of forecasts for signed contracts and machine
+                production needs.
+              </p>
+              <p>
+                <strong>Key Achievement:</strong> Implemented an enhanced
+                forecasting system that improved accuracy across all areas by
+                20%, including revenue, signed contracts, and machine production
+                forecasts. This led to a 15% reduction in forecast errors and
+                reduced planning time by 20%.
+              </p>
+              <p>
+                <strong>S&OP Process Optimization:</strong><br />
+                Completely redesigned the Sales and Operations Planning (S&OP)
+                process, ensuring seamless integration of KPIs and proactive
+                warning signals.
+              </p>
+              <p>
+                <strong>Key Achievement:</strong> Leveraged Tableau to make all
+                relevant KPIs, forecasts, and alerts universally accessible to
+                employees, improving cross-departmental alignment by 25%,
+                reducing planning errors by 30%, and increasing operational
+                efficiency by 20%.
+              </p>
+              <p>
+                <strong>Sales Target Tracking for Sales Team:</strong><br />
+                Implemented a dynamic Tableau dashboard that allowed the sales
+                team and their manager to track real-time progress against sales
+                targets, enabling proactive measures based on current
+                performance.
+              </p>
+              <p>
+                <strong>Key Achievement:</strong> The dashboard became a crucial
+                tool for identifying performance gaps and opportunities, helping
+                the sales team refine their strategies and improve target
+                achievement rates.
+              </p>
+            </div>
+          </div>
 
-      <!-- Project 1: Business Operations Manager -->
-      <div class="project-card" data-project="1">
-        <img src="https://i.imgur.com/V9UHY9Y.png" alt="Business Operations Manager" />
-        <div class="content">
-          <h3>Business Operations Manager (EGYM)</h3>
-          <p>Improved forecasting and budget planning efficiency, optimized S&OP Process.</p>
-          <p class="skill-summary">Click for details</p>
+          <!-- Project 2: Director of Quality Management -->
+          <div class="project-card" data-project="2">
+            <img
+              src="https://i.imgur.com/Zzg9qxJ.png"
+              alt="Director of Quality Management"
+            />
+            <div class="content">
+              <h3>Director of Quality Management (IDnow)</h3>
+              <p>
+                Developed a comprehensive quality management strategy,
+                implemented a fraud & quality index and escalation processes to
+                improve transparency and customer satisfaction.
+              </p>
+              <p class="skill-summary">Click for details</p>
+            </div>
+          </div>
+
+          <!-- Modal for Project 2 -->
+          <div id="project-modal-2" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h3>Director of Quality Management (IDnow)</h3>
+              <p>
+                <strong
+                  >Optimization of a Comprehensive Quality Management Strategy
+                  and Policy:</strong
+                ><br />
+                Elevated quality assurance to a new level by implementing a
+                quality management policy that significantly increased the
+                company standard and reduced the error rate in internal
+                processes by 25%.<br />
+                <strong>Key Achievement:</strong> Created and executed a robust
+                quality management framework, reducing customer complaints by
+                30% within the first year.<br /><br />
+
+                <strong
+                  >Creation & Implementation of a Fraud & Quality Index:</strong
+                ><br />
+                Developed a fraud & quality index that enabled the company to
+                transparently track key quality metrics, increasing customer
+                satisfaction scores by 20%.<br />
+                <strong>Key Achievement:</strong> The fraud & quality index
+                helped to better detect fraud attempts and streamlined
+                escalation processes, improving response times and resolution
+                efficiency. The index fostered a customer-focused approach,
+                improving overall process efficiency.<br /><br />
+
+                <strong>Development of Anti-Fraud Strategy:</strong><br />
+                Developed and implemented a dedicated Anti-Fraud department that
+                streamlined fraud detection and prevention processes.<br />
+                <strong>Key Achievement:</strong> Reduced fraud rates by 40%,
+                resulting in significant cost savings and enhanced security for
+                the company and its clients.<br /><br />
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
-<!-- Modal for Project 1 -->
-<div id="project-modal-1" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Business Operations Manager (EGYM)</h3>
-    <p>
-      <strong>Efficiency Improvement in Forecasting and Budget Planning:</strong><br>
-      Regularly generated precise forecasts that significantly improved revenue planning accuracy and also enhanced the accuracy of forecasts for signed contracts and machine production needs.
-    </p>
-    <p>
-      <strong>Key Achievement:</strong> Implemented an enhanced forecasting system that improved accuracy across all areas by 20%, including revenue, signed contracts, and machine production forecasts. This led to a 15% reduction in forecast errors and reduced planning time by 20%.
-    </p>
-    <p>
-      <strong>S&OP Process Optimization:</strong><br>
-      Completely redesigned the Sales and Operations Planning (S&OP) process, ensuring seamless integration of KPIs and proactive warning signals.
-    </p>
-    <p>
-      <strong>Key Achievement:</strong> Leveraged Tableau to make all relevant KPIs, forecasts, and alerts universally accessible to employees, improving cross-departmental alignment by 25%, reducing planning errors by 30%, and increasing operational efficiency by 20%.
-    </p>
-    <p>
-      <strong>Sales Target Tracking for Sales Team:</strong><br>
-      Implemented a dynamic Tableau dashboard that allowed the sales team and their manager to track real-time progress against sales targets, enabling proactive measures based on current performance.
-    </p>
-    <p>
-      <strong>Key Achievement:</strong> The dashboard became a crucial tool for identifying performance gaps and opportunities, helping the sales team refine their strategies and improve target achievement rates.
-    </p>
-  </div>
-</div>
-
-
-
-      <!-- Project 2: Director of Quality Management -->
-      <div class="project-card" data-project="2">
-        <img src="https://i.imgur.com/Zzg9qxJ.png" alt="Director of Quality Management" />
-        <div class="content">
-          <h3>Director of Quality Management (IDnow)</h3>
-          <p>Developed a comprehensive quality management strategy, implemented a fraud & quality index and escalation processes to improve transparency and customer satisfaction.</p>
-          <p class="skill-summary">Click for details</p>
-        </div>
-      </div>
-
-<!-- Modal for Project 2 -->
-<div id="project-modal-2" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Director of Quality Management (IDnow)</h3>
-    <p>
-      <strong>Optimization of a Comprehensive Quality Management Strategy and Policy:</strong><br>
-      Elevated quality assurance to a new level by implementing a quality management policy that significantly increased the company standard and reduced the error rate in internal processes by 25%.<br>
-      <strong>Key Achievement:</strong> Created and executed a robust quality management framework, reducing customer complaints by 30% within the first year.<br><br>
-
-      <strong>Creation & Implementation of a Fraud & Quality Index:</strong><br>
-      Developed a fraud & quality index that enabled the company to transparently track key quality metrics, increasing customer satisfaction scores by 20%.<br>
-      <strong>Key Achievement:</strong> The fraud & quality index helped to better detect fraud attempts and streamlined escalation processes, improving response times and resolution efficiency. The index fostered a customer-focused approach, improving overall process efficiency.<br><br>      
-
-      <strong>Development of Anti-Fraud Strategy:</strong><br>
-      Developed and implemented a dedicated Anti-Fraud department that streamlined fraud detection and prevention processes.<br>
-      <strong>Key Achievement:</strong> Reduced fraud rates by 40%, resulting in significant cost savings and enhanced security for the company and its clients.<br><br>
-
-
-    </p>
-  </div>
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-    
+    </section>
 
     <section id="contact">
       <h2>Contact Me</h2>
@@ -500,7 +647,11 @@
         <div class="contact-info">
           <div class="contact-item">
             <i class="fas fa-envelope"></i>
-            <span><a href="mailto:contact@andreas-sia.de">contact@andreas-sia.de</a></span>
+            <span
+              ><a href="mailto:contact@andreas-sia.de"
+                >contact@andreas-sia.de</a
+              ></span
+            >
           </div>
           <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
@@ -524,59 +675,108 @@
           </div>
         </div>
 
-<!-- Kontaktformular -->
-<form action="https://formsubmit.co/siade@gmx.de" method="POST" enctype="multipart/form-data">
+        <!-- Kontaktformular -->
+        <form
+          action="https://formsubmit.co/siade@gmx.de"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Name-Feld -->
+          <label for="sendername">Name:</label>
+          <input
+            type="text"
+            id="sendername"
+            name="name"
+            required
+            placeholder="Please enter your name"
+          />
 
-  <!-- Name-Feld -->
-  <label for="sendername">Name:</label>
-  <input type="text" id="sendername" name="name" required placeholder="Please enter your name" />
+          <!-- Email-Feld -->
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Please enter your  email address for a response"
+          />
 
-  <!-- Email-Feld -->
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required placeholder="Please enter your  email address for a response" />
+          <!-- Betreff-Feld -->
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="_subject"
+            required
+            placeholder="Please enter the subject of your message"
+          />
 
-  <!-- Betreff-Feld -->
-  <label for="subject">Subject:</label>
-  <input type="text" id="subject" name="_subject" required placeholder="Please enter the subject of your message" />
+          <!-- Message-Feld -->
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Write your message here"
+          ></textarea>
 
-  <!-- Message-Feld -->
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" required placeholder="Write your message here"></textarea>
+          <!-- CC-Adresse -->
+          <label for="cc">CC (optional):</label>
+          <input
+            type="email"
+            id="cc"
+            name="_cc"
+            placeholder="Enter an email address if you'd like to send a copy of the message to someone else"
+          />
 
-  <!-- CC-Adresse -->
-  <label for="cc">CC (optional):</label>
-  <input type="email" id="cc" name="_cc" placeholder="Enter an email address if you'd like to send a copy of the message to someone else" />
+          <!-- Dateianhang -->
+          <label for="attachment" class="file-upload">Attachment</label>
+          <input
+            type="file"
+            id="attachment"
+            name="attachment"
+            accept=".jpg, .jpeg, .png, .pdf, .docx"
+            required
+          />
+          <small
+            >max 10 MB; allowed file types: .jpg, .jpeg, .png, .pdf,
+            .docx</small
+          >
 
-  <!-- Dateianhang -->
-  <label for="attachment" class="file-upload">Attachment</label>
-  <input type="file" id="attachment" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .docx" required />  
-  <small>max 10 MB; allowed file types: .jpg, .jpeg, .png, .pdf, .docx</small>
+          <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
+          <div
+            id="file-confirmation"
+            style="display: none; color: green; margin-top: 10px"
+          >
+            File attached successfully!
+          </div>
 
-  <!-- Bestätigungsmeldung für erfolgreich angehängte Datei -->
-  <div id="file-confirmation" style="display: none; color: green; margin-top: 10px;">
-    File attached successfully!
-  </div>
+          <!-- Verstecktes Feld für benutzerdefinierte Weiterleitungsseite -->
+          <input
+            type="hidden"
+            name="_next"
+            value="https://andreas-sia.de/thank-you.html"
+          />
 
-  <!-- Verstecktes Feld für benutzerdefinierte Weiterleitungsseite -->
-  <input type="hidden" name="_next" value="https://andreas-sia.de/thank-you.html">
+          <!-- Extra Abstand vor dem Button -->
+          <div style="margin-bottom: 20px"></div>
 
-  <!-- Extra Abstand vor dem Button -->
-  <div style="margin-bottom: 20px;"></div>
-
-  <button type="submit">Send Message</button>
-</form>
-
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </section>
 
-<!-- Footer Bereich -->
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2025 Andreas Siade.</p>
-    <p><a href="/impressum" title="Impressum" class="footer-impressum">Impressum</a></p>
-  </div>
-</footer>
-
+    <!-- Footer Bereich -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Andreas Siade.</p>
+        <p>
+          <a href="/impressum" title="Impressum" class="footer-impressum"
+            >Impressum</a
+          >
+        </p>
+      </div>
+    </footer>
 
     <!-- Dein JavaScript -->
     <script src="scripts.js"></script>
