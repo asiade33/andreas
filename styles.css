@@ -762,7 +762,8 @@ h3 {
 
 /* KONTAKTFORMULAR */
 form {
-  max-width: 600px;
+  max-width: 900px;
+  width: 60%;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 15px;
@@ -781,7 +782,8 @@ form label {
 
 form input,
 form textarea {
-  width: 100%;
+  width: auto;
+  min-width: 100%; /* Sicherstellen, dass die Felder immer mindestens die Breite des Formulars haben */
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -789,6 +791,13 @@ form textarea {
   font-size: 1em;
   font-family: inherit;
   box-sizing: border-box;
+}
+
+/* Dynamische Höhe für Textarea, basierend auf der Textlänge */
+form textarea {
+  min-height: 80px; /* Mindesthöhe für das Textfeld */
+  resize: vertical; /* Möglichkeit zur manuellen Größenänderung des Textfeldes */
+  height: auto; /* Die Höhe soll sich basierend auf dem Inhalt anpassen */
 }
 
 /* Button Styling */
@@ -831,6 +840,52 @@ input[type="file"] {
 small {
   display: block;
   color: #777;
+}
+
+/* Stil für Platzhaltertext */
+input::placeholder,
+textarea::placeholder {
+  font-size: 12px; /* Kleinere Schriftgröße */
+  color: #777; /* Graue Farbe für den Platzhalter */
+  font-style: italic; /* Optional: kursiv */
+}
+
+/* Stil für die kleinen Hinweise */
+small {
+  font-size: 10px;
+  color: #777;
+}
+
+/* CSS für die thank-you-page */
+.thank-you-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Höhe auf 100% der Ansichtshöhe setzen */
+  margin: 0; /* Entfernt jeglichen Standardabstand */
+  background-color: #f5f9fc; /* Heller Blauton für den Hintergrund */
+}
+
+.thanks-container {
+  text-align: center;
+  background-color: #ffffff; /* Weißer Hintergrund */
+  padding: 40px;
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  max-width: 500px;
+  width: 90%; /* Maximale Breite auf 90% der Fensterbreite setzen */
+}
+
+.thanks-container h1 {
+  font-size: 2.5rem; /* Große Schrift für die Überschrift */
+  color: #0077cc; /* Helles Blau für den Titel */
+  margin-bottom: 20px;
+}
+
+.thanks-container p {
+  font-size: 1.2rem; /* Lesbare Schriftgröße für den Text */
+  color: #555; /* Dezentes Grau für den Text */
+  line-height: 1.5; /* Erhöhte Zeilenhöhe für bessere Lesbarkeit */
 }
 
 /* Media Queries für Bildschirmgrößen bis max. 768px */
@@ -1068,5 +1123,65 @@ small {
 
   form {
     max-width: 100%;
+    width: 100%;
   }
+
+  form textarea {
+    min-height: 100px; /* Höheres Minimum für Textarea auf Handys */
+  }
+
+/* Button Styling */
+form button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3; /* Dunkleres Blau beim Hover */
+}
+
+/* CSS für das Datei-Input-Feld */
+input[type="file"] {
+  display: none; /* Verstecke das Standard-Input */
+}
+
+/* Benutzerdefiniertes Button-Styling */
+.file-upload {
+  display: inline-block;
+  background-color: #6c757d; /* Dunkles Grau */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.file-upload:hover {
+  background-color: #5a6368; /* Dunkleres Grau bei Hover */
+}
+
+/* Optional: Platz für zusätzliche Gestaltung */
+small {
+  display: block;
+  color: #777;
+}
+
+/* Stil für Platzhaltertext */
+input::placeholder,
+textarea::placeholder {
+  font-size: 12px; /* Kleinere Schriftgröße */
+  color: #777; /* Graue Farbe für den Platzhalter */
+  font-style: italic; /* Optional: kursiv */
+}
+
+/* Stil für die kleinen Hinweise */
+small {
+  font-size: 10px;
+  color: #777;
 }
