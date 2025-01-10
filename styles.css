@@ -827,6 +827,11 @@ input[type="file"] {
   display: none; /* Verstecke das Standard-Input */
 }
 
+/* Standard Platzhaltertext für alle Geräte */
+#cc::placeholder {
+  content: "Enter an email address if you'd like to send a copy of the message to someone else";
+}
+
 /* Benutzerdefiniertes Button-Styling */
 .file-upload {
   display: inline-block;
@@ -1186,8 +1191,8 @@ small {
     min-height: 100px; /* Höheres Minimum für Textarea auf Handys */
   }
 
-    #cc::placeholder {
-    content: "Enter email for a copy"; /* Verkürzte Version */
+  #cc::placeholder {
+    content: "Enter an email for a copy"; /* Verkürzte Version */
   }
 
   /* Button Styling */
