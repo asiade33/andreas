@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://andreas-sia.de/sitemap.xml
