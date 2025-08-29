@@ -393,26 +393,28 @@ h3 {
 
 #engagement {
   padding: 50px 20px;
-  background-color: #f7f9fc; /* Passt zum Hintergrund von #experience */
+  background-color: #f7f9fc;
   text-align: center;
 }
 
 #engagement h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
-  color: #007bff; /* Hauptfarbe für Titel, wie im Rest der Seite */
+  color: #007bff;
 }
 
 .engagement-item {
-  display: flex; 
-  gap: 20px;
+  display: grid; /* GEÄNDERT: von flex zu grid */
+  grid-template-columns: 120px 1fr 2fr; /* Layout wie bei .experience-item */
+  grid-gap: 20px;
+  align-items: start;
   background-color: #ffffff;
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 0 auto;
-  width: 85%; /* <<< DIE WICHTIGSTE ÄNDERUNG: Wie bei #experience ul */
-  max-width: 900px; /* Behält die maximale Breite für große Bildschirme bei */
+  width: 85%;
+  max-width: 900px; /* Maximale Breite angepasst für das neue Layout */
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -422,11 +424,9 @@ h3 {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Linke Spalte mit den Details */
+/* Mittlere Spalte mit den Details */
 .engagement-details {
-  flex: 0 0 250px; 
-  padding-right: 20px;
-  border-right: 1px solid #eee;
+  padding-left: 1rem; /* Abstand für bessere Optik */
 }
 
 .engagement-details span {
@@ -438,11 +438,6 @@ h3 {
   font-size: 1.2em;
   font-weight: 600;
   color: #333;
-}
-
-.engagement-org {
-  font-weight: bold;
-  color: #555;
 }
 
 .engagement-org a {
@@ -457,18 +452,14 @@ h3 {
 
 .engagement-duration {
   font-size: 0.9em;
-  color: #777; 
+  color: #777;
   font-style: italic;
 }
 
 /* Rechte Spalte mit der Beschreibung */
-.engagement-description {
-  flex: 1;
-}
-
 .engagement-description ul {
   list-style-type: disc;
-  padding-left: 25px; /* Ein kleiner, sauberer Einzug */
+  padding-left: 25px;
 }
 
 .engagement-description li {
@@ -1186,18 +1177,12 @@ small {
   }
 
   .engagement-item {
-    flex-direction: column;
-    gap: 0;
-    width: 95%; /* <<< Etwas breiter auf dem Handy für bessere Lesbarkeit */
+    grid-template-columns: 1fr; /* Einspaltiges Layout auf Mobilgeräten */
+    width: 95%;
   }
-
+  
   .engagement-details {
-    flex-basis: auto; 
-    border-right: none; 
-    padding-right: 0;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    padding-left: 0; /* Kein linker Abstand auf Mobilgeräten */
   }
 
   .engagement-description {
