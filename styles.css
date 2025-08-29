@@ -478,6 +478,22 @@ h3 {
   text-decoration: underline;
 }
 
+.engagement-description ul li::before {
+  content: "▶"; /* Ein Pfeil-Symbol */
+  position: absolute;
+  left: -20px; /* Anpassen je nach Einzug */
+  color: #007bff; /* Deine Hauptfarbe */
+}
+
+/* Und passe die li an, um Platz zu schaffen */
+.engagement-description ul {
+  list-style-type: none; /* Standard-Punkte ausblenden */
+  padding-left: 30px;
+}
+.engagement-description li {
+  position: relative;
+}
+
 /* Container für die Skills */
 .skills-container {
   margin: 0 auto; /* Zentriert den Container */
@@ -526,17 +542,6 @@ h3 {
   flex-direction: column; /* Elemente vertikal anordnen */
   height: 300px; /* Einheitliche Höhe für alle Karten */
   overflow: hidden; /* verhindert, dass Inhalte aus der Box ragen */
-}
-
-/* Grid für die Karten */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 gleichmäßig verteilte Spalten */
-  gap: 20px;
-  max-width: 100%; /* Maximale Breite auf 100% setzen */
-  margin: 0 auto; /* Zentriert den Grid-Container */
-  justify-items: center; /* Zentriert die Karten in ihren jeweiligen Grid-Spalten */
-  grid-template-rows: auto; /* Flexibler Umgang mit den Reihen */
 }
 
 .skill-card:hover {
