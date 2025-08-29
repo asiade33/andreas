@@ -517,10 +517,7 @@ h3 {
 /* Grid für die Karten */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* Auto-fill sorgt dafür, dass so viele Karten wie möglich angezeigt werden */
+  grid-template-columns: repeat(4, 1fr); /* Diese überschreibt die obere und ist starr */
   gap: 20px;
   max-width: 100%; /* Maximale Breite auf 100% setzen */
   margin: 0 auto; /* Zentriert den Grid-Container */
