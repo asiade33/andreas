@@ -387,6 +387,106 @@ h3 {
   text-align: center;
 }
 
+/* ============================================= */
+/*          Volunteering & Engagement            */
+/* ============================================= */
+
+#engagement {
+  padding: 50px 20px;
+  background-color: #f7f9fc; /* Passt zum Hintergrund von #experience */
+  text-align: center;
+}
+
+#engagement h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #007bff; /* Hauptfarbe für Titel, wie im Rest der Seite */
+}
+
+.engagement-item {
+  display: flex; /* Flexbox für zweispaltiges Layout auf dem Desktop */
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 10px; /* Abgerundete Ecken wie bei .experience-item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Standard-Schatten */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 900px; /* Begrenzt die Breite für bessere Lesbarkeit */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover-Effekt wie bei .experience-item */
+}
+
+.engagement-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Linke Spalte mit den Details */
+.engagement-details {
+  flex: 0 0 250px; /* Feste Breite für die linke Spalte */
+  padding-right: 20px;
+  border-right: 1px solid #eee; /* Trennlinie */
+}
+
+.engagement-details span {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.engagement-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333; /* Wie .job-title */
+}
+
+.engagement-org {
+  font-weight: bold;
+  color: #555;
+}
+
+.engagement-org a {
+  color: #007bff; /* Link-Farbe */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.engagement-org a:hover {
+  text-decoration: underline;
+}
+
+.engagement-duration {
+  font-size: 0.9em;
+  color: #777; /* Wie .job-duration */
+  font-style: italic;
+}
+
+/* Rechte Spalte mit der Beschreibung */
+.engagement-description {
+  flex: 1; /* Nimmt den restlichen Platz ein */
+}
+
+.engagement-description ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.engagement-description li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #555; /* Wie .job-description */
+}
+
+.engagement-description a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.engagement-description a:hover {
+  text-decoration: underline;
+}
+
+
 /* Container für die Skills */
 .skills-container {
   margin: 0 auto; /* Zentriert den Container */
@@ -1075,6 +1175,32 @@ small {
     width: 100%; /* Volle Breite */
     padding-left: 0; /* Entfernt unnötigen Einzug */
     margin-top: 15px; /* Abstand zwischen Jobdetails und Jobbeschreibung */
+  }
+
+  #engagement {
+    padding: 30px 15px; /* Weniger Padding auf Mobilgeräten */
+  }
+
+  #engagement h2 {
+    font-size: 2em; /* Kleinere Überschrift */
+  }
+
+  .engagement-item {
+    flex-direction: column; /* Einspaltiges Layout */
+    gap: 0;
+  }
+
+  .engagement-details {
+    flex-basis: auto; /* Breite anpassen */
+    border-right: none; /* Keine seitliche Trennlinie mehr */
+    padding-right: 0;
+    margin-bottom: 15px; /* Abstand nach unten */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Trennlinie unten */
+  }
+
+  .engagement-description {
+    padding-left: 0;
   }
 
   /* Skills Abschnitt Anpassungen */ /* Skills Abschnitt Anpassungen */
